@@ -16,25 +16,30 @@
   <img src="https://img.shields.io/liberapay/patrons/Psycho.svg?logo=liberapay">
   <img src="https://img.shields.io/liberapay/receives/Psycho.svg?logo=liberapay">
 </p>
+This Fork is based on version 1.0.0-rc5,
+the original Repository you can find [here](https://github.com/project-alice-assistant/ProjectAlice)
+
 
 Project Alice is a smart voice home assistant that is completely modular and extensible. It was first built around Snips therefore runs entirely offline and never sends or shares your voice interactions with anyone, Project Alice **guarantees** your privacy in your home or wherever you’re using Project Alice.
 
 However, as an option, since we've built Project Alice on top of Snips, Project Alice can be configured to use some online alternatives and fall backs (for example, using Amazon or Google’s Text to Speech engines), just like Snips. Since Snips (and the Project Alice team) strongly believe that decisions about your privacy should be made by you and you alone, these options are all disabled by default.
 
 ## Installing
-Please follow the [documentation](https://docs.projectalice.io/setup/)
+Please follow the documentation
 
 ## Join the community
-Join our forum on https://community.projectalice.io
+Here you can join the original forum on https://community.projectalice.io
+but dont ask them about this Fork, only i can give you informations about this Fork!
 
-## Chat with us and the community
+## Chat with the original community
 Join us on our [Discord server](https://discord.gg/C6HNtzV)
+but dont ask them about this Fork, only i can give you informations about this Fork!
 
-## Install new skills
+## Install new skills - coming soon
 Either directly on your device on the interface, or on [https://store.projectalice.io](https://store.projectalice.io)
 
 ## Who made this?
-The original code base was started at the end 2015 and several rewrites made it what it is today. It was entirely written by me *Psycho* until recently, where I decided to make the code openly available to the world.
+The original code base was started at the end 2015 and several rewrites made it what it is today. It was entirely written by [*Nova*](https://github.com/Psychokiller1888) until recently, where I decided to make the code openly available to the world.
 
 In of May 2019, *Jierka* joined the project to prepare Project Alice for a public release by providing quality code, fresh ideas and insights for the project. At the same time *maxbachmann* also joined the project, at first to translate to German for the release, but soon moved beyond his initial commitment and started contributing to the refactoring, rewrite and skill production.
 
@@ -71,10 +76,10 @@ the main unit.
 Hey, did you skip ahead and not read what I wrote a bit earlier? You have to! Just kidding, but yes, your contributions are more than welcome, be it core side or on the skill side. You'll find more about the guidelines on our wiki.
 
 ## 📝 Feedback
-Please file an [Issue](https://github.com/project-alice-assistant/ProjectAlice/issues).
+Please file an [Issue](https://github.com/openlewa/ProjectAlice-HA-unofficial/issues).
 
-## 🛣️ Roadmap
-See our [Roadmap](https://github.com/project-alice-assistant/ProjectAlice/milestones).
+## 🛣️ Roadmap 
+See our [Roadmap]todo.txt().
 
 ## 📜 License
 
