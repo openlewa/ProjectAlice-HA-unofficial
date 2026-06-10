@@ -1,1 +1,49 @@
+[x] Decide native Home Assistant port instead of Alice bridge.
+[x] Choose modular Alice Personality Platform architecture.
+[x] Confirm Alice should be its own Home Assistant Conversation Agent.
+[x] Confirm hybrid response model: templates/rules first, optional LLM fallback.
+[x] Confirm hybrid addon model: HA-native Alice Extensions plus lightweight Alice Packs.
+[x] Confirm voice pipeline design: openWakeWord for wakeword, Speech-to-Phrase/Whisper for STT, Wyoming for voice services.
+[x] Confirm RedQueen core features: mood, relationship, humor, configurable strong personality.
+[x] Confirm Ambient Chatter as optional/deactivatable RedQueen behavior.
+[x] Confirm Containment Mode security design with Green/Yellow/Red levels.
+[x] Confirm external siren/radio switch support must be optional and explicitly configured.
+[x] Confirm Automation Builder with role-based restrictions for Kids, Operator, Administrator, and Commander.
+[x] Write Alice Home Assistant Personality Platform design spec.
 
+[ ] Create implementation plan from approved design.
+[ ] Scaffold HACS-compatible Home Assistant integration under custom_components/alice.
+[ ] Add hacs.json and Home Assistant manifest.json.
+[ ] Implement Alice Conversation Agent skeleton.
+[ ] Implement RedQueen mood/persona state model.
+[ ] Implement User Memory with roles, titles, and voice/style preferences.
+[ ] Implement Talk/Persona Engine with template fallback.
+[ ] Implement optional LLM adapter with deterministic fallback.
+[ ] Implement Ambient Chatter scheduler with quiet hours and daily limits.
+[ ] Implement Containment Mode state machine.
+[ ] Implement Security Level entities.
+[ ] Implement voice PIN flow for Security Level Red: announcement, 6-second listening window, 3 attempts.
+[ ] Implement acoustic alarm cycle with 30-second pauses and 10-minute maximum.
+[ ] Implement optional external siren/switch outputs with hard shutdown.
+[ ] Implement Automation Builder draft flow.
+[ ] Implement role-based Automation Builder validation.
+[ ] Implement Alice Extension Registry.
+[ ] Implement Alice Pack loader and manifest validation.
+[ ] Implement Speech-to-Phrase custom sentence aggregation/export.
+[ ] Define Alice wakeword model distribution process.
+[ ] Add diagnostics and repair issues for common setup problems.
+[ ] Add tests for Conversation Agent behavior.
+[ ] Add tests for RedQueen mood, relationships, and Ambient Chatter.
+[ ] Add tests for Containment Mode, alarm cycle, siren outputs, and PIN attempts.
+[ ] Add tests for Automation Builder permissions and safety validation.
+[ ] Add tests for pack/extension registration and sentence conflicts.
+[ ] Add HACS/manifest validation checks.
+[ ] Update README with HACS installation and roadmap links.
+
+Found issues to fix later:
+
+[ ] README Roadmap link is malformed: "See our [Roadmap]todo.txt()." should link to TODO.txt correctly.
+[ ] TODO.txt existed as an empty placeholder after syncing origin/master; keep it maintained as the roadmap source.
+[ ] The current repository still has no Home Assistant custom integration structure.
+[ ] No HACS metadata exists yet.
+[ ] skills/ exists but is empty after syncing origin/master; decide whether to keep it as a placeholder or document its future purpose.
