@@ -4,18 +4,8 @@
 
 <p align=center style="line-height: 2;">
   <a href="LICENSE" target="_blank"><img src="https://img.shields.io/github/license/project-alice-assistant/ProjectAlice" alt="License" /></a>
-  <a href="https://discord.gg/Jfcj355" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/579345007518154752?logo=discord"></a><br/>
-  <a href="https://github.com/project-alice-assistant/ProjectAlice/actions?query=workflow%3A%22Unittest+%26+Quality%22"><img alt="Tests" src="https://github.com/project-alice-assistant/ProjectAlice/workflows/Unittest%20&%20Quality/badge.svg"></a>
-  <a href="https://zenhub.com"><img src="https://dxssrr2j0sq4w.cloudfront.net/3.2.0/img/external/zenhub-badge.png" alt="ZenHub logo"></a><br/>
-  <a href="https://sonarcloud.io/dashboard?id=project-alice-assistant_ProjectAlice" target="_blank"><img alt="Coverage Status" src="https://sonarcloud.io/api/project_badges/measure?project=project-alice-assistant_ProjectAlice&metric=coverage"></a>
-  <a href="https://sonarcloud.io/dashboard?id=project-alice-assistant_ProjectAlice" target="_blank"><img alt="Maintainability" src="https://sonarcloud.io/api/project_badges/measure?project=project-alice-assistant_ProjectAlice&metric=sqale_rating"></a>
-  <a href="https://sonarcloud.io/dashboard?id=project-alice-assistant_ProjectAlice" target="_blank"><img alt="Code Smells" src="https://sonarcloud.io/api/project_badges/measure?project=project-alice-assistant_ProjectAlice&metric=code_smells"></a>
-</p>
-
-<p align=center>
-  <img src="https://img.shields.io/liberapay/patrons/Psycho.svg?logo=liberapay">
-  <img src="https://img.shields.io/liberapay/receives/Psycho.svg?logo=liberapay">
-</p>
+  <a href="https://discord.gg/Jfcj355" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/579345007518154752?logo=discord"></a></p>
+  
 This Fork is based on version 1.0.0-rc5,
 the original Repository you can find [here](https://github.com/project-alice-assistant/ProjectAlice)
 
@@ -48,9 +38,9 @@ If you want to use Project Alice in a non-commercial setting, I’m not asking y
 ## How does it run? What's special about it?
 Glad you asked! It's been made very modular, in fact it runs using user-developed skills. You won't have to use any console to train your assistant, we have made a way for the creators to share their skills with the language training included, the whole assistant part is automated.
 
-Adding new skills is as easy as using either our CLI or a ticketing system. Updates are automatic, so over time the skills will get better and better with the community input to improve utterances and adding more language support.
+Adding new skills is made with the Alice Skill HACS Repository. Updates are automatic, so over time the skills will get better and better with the community input to improve utterances. Adding more language is possible with Speech_to_Phrase.
 
-Project Alice goes far beyond just acting on your voice requests.  Project Alice is meant as an event driven automation system for your home.  Anything that triggers an event (a voice request or a sensor changing states are considered “events” by Project Alice) can be used by skills to drive further interactions.  For example, a sensor indicating "HighCO2" or "TemperatureTooCold" can be used by a skill to create interactions (e.g. Alice announcing, “Warning high CO2 Level detected, move to fresh air immediately” or “It seems a bit chilly, would you like me to turn up the heat?”.  The only limits are your imagination!!
+Project Alice goes far beyond just acting on your voice requests.  Project Alice is meant as an event driven automation system for your home.  Anything that triggers an event (a voice request or a sensor changing states are considered “events” by Home Assistant) can be used by skills to drive further interactions.  For example, a sensor indicating "HighCO2" or "TemperatureTooCold" can be used by a skill to create interactions (e.g. Alice announcing, “Warning high CO2 Level detected, move to fresh air immediately” or “It seems a bit chilly, would you like me to turn up the heat?”.  The only limits are your imagination!!
 
 Finally, Project Alice has her own mood (which can vary based on your interactions with her), can use different voices for different users, knows which user is talking to her, and even likes or dislikes people based on their interactions with her. She can also automate your home routines by using a customization skill (e.g. turn on air conditioning and lights when a sensor indicates it is too hot and the sun has set).
 
@@ -69,7 +59,7 @@ Well, since it's written in Python, as of now on Linux architecture. This means 
 such as the Respeaker core or the Matrix Creator is the best choices for a hardware platform. As for which Raspberry Pi,
 a raspberry 3, 3b, 3b+, 3A+ or 4 for the main unit are good choices. You cannot run Alice on a pi zero but pi zero is
 more than enough for satellites. A satellite runs a subset of the Alice platform, and sends and receives interactions to
-the main unit.
+the main unit. Support for ESP devices is planed with help of Home Assistant.
 
 
 ## Can we contribute?
