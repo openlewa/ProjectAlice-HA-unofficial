@@ -26,6 +26,8 @@ Port the distinctive Alice/RedQueen experience into Home Assistant without rebui
 
 Alice is implemented as a native Home Assistant custom integration under `custom_components/alice`, installable through HACS. It exposes a Home Assistant conversation entity so Alice can be selected as its own Assist agent.
 
+The current Project Alice release files are preserved separately in `Alice_Legacy_Release_1.0.0-rc5` as a read-only reference snapshot. Future implementation work must not edit files in that folder; useful behavior should be reimplemented in the Home Assistant integration instead.
+
 Core modules:
 
 1. **Alice Conversation Agent**
@@ -75,11 +77,26 @@ Core modules:
 10. **Wyoming Integration Usage**
     - Alice uses Home Assistant's existing Wyoming integrations for openWakeWord, Speech-to-Phrase/Whisper, and Piper/other TTS.
 
+### HACS Scaffold Meaning
+
+"Scaffold HACS-compatible Home Assistant integration under `custom_components/alice`" means creating the minimum installable Home Assistant custom integration structure, not the full feature implementation. The scaffold should include:
+
+- `custom_components/alice/manifest.json` with domain, name, version, requirements, integration type, and dependencies.
+- `custom_components/alice/__init__.py` with async setup/unload placeholders.
+- `custom_components/alice/const.py` for domain and shared constants.
+- `custom_components/alice/config_flow.py` for UI setup.
+- `custom_components/alice/conversation.py` for the Alice conversation entity skeleton.
+- Initial platform files for planned entities as needed, such as `sensor.py`, `switch.py`, `button.py`, `select.py`, and `number.py`.
+- `services.yaml`, translations, diagnostics/repairs placeholders, and test skeletons.
+- Root `hacs.json` so HACS can discover and display the integration.
+
+The first scaffold should boot cleanly in Home Assistant and expose only safe placeholder behavior until the RedQueen, Containment Mode, Automation Builder, and extension modules are implemented.
+
 ## Voice Pipeline
 
 The intended voice flow is:
 
-1. Wakeword model detects "Hey Alice", "Hallo Alice", "Red Queen", or another configured Alice wake phrase.
+1. Wakeword model detects "Hey Alice" or "Hey Red Queen".
 2. Home Assistant starts the Alice Assist pipeline.
 3. STT/Speech-to-Phrase recognizes the command after the wakeword.
 4. Alice Conversation Agent interprets the command.
@@ -90,11 +107,7 @@ The intended voice flow is:
 Speech-to-Phrase custom sentences are not wakewords. Alice wakewords require trained openWakeWord models. Candidate phrases:
 
 - Hey Alice
-- Hallo Alice
-- Red Queen
 - Hey Red Queen
-- Alice wach auf
-- Computer Alice
 
 The project should provide an **Alice Wakeword Pack** with:
 
@@ -103,7 +116,7 @@ The project should provide an **Alice Wakeword Pack** with:
 - Installation guidance for `/share/openwakeword`.
 - Optional Home Assistant diagnostics/repairs when no Alice wakeword is configured.
 
-Short wakewords like "Alice" alone should be experimental only because they are likely to have poorer reliability and more false positives.
+Other wake phrases are out of scope unless the design is changed. Short wakewords like "Alice" alone are not planned candidates because they are likely to have poorer reliability and more false positives.
 
 ### Speech-to-Phrase
 
@@ -138,6 +151,7 @@ RedQueen tracks mood states such as:
 - alarmed
 - tired
 - vain
+- amorous
 
 Mood affects:
 
@@ -164,7 +178,7 @@ Example titles:
 
 - Operator
 - Facility Manager
-- Lieblingsmensch
+- love
 - Childs
 - Commander
 - Administrator
@@ -223,13 +237,15 @@ Containment Mode is a configurable Home Assistant security routine. It may check
 When Containment Mode is activated while a configured door/window contact is open:
 
 1. Security Level becomes Yellow.
-2. Alice plays a 10-second warning tone.
+2. Alice plays a 10-second warning tone at the configured Containment warning volume.
 3. Alice announces:
 
    "Sperrmodus konnte nicht vollständig erfüllt werden! Sind wirklich alle Fenster und Türen geschlossen."
 
 4. Alice may list open contacts, such as "Offen sind: Küchenfenster, Terrassentür."
 5. Depending on configuration, Alice can cancel, partially activate, or ask for confirmation.
+
+Warning tone and volume must be explicitly configurable per output target. Defaults should be noticeable but not excessive, and Alice should restore a media player's previous volume after the warning when Home Assistant supports it.
 
 ### Alarm During Active Containment Mode
 
@@ -258,7 +274,18 @@ Security requirements:
 - PIN must never be stored in clear text.
 - Voice PIN can be disabled by configuration if the user prefers dashboard/app-only confirmation.
 - Failed attempts are rate-limited.
-- Commander/Administrator role or configured alarm permission is required.
+- Alarm deactivation during Security Level Red is independent of the user's role. A correct alarm PIN is sufficient.
+
+### Deactivation Methods
+
+Alarm and Containment Mode deactivation can be triggered through:
+
+- correct voice PIN
+- Home Assistant dashboard/app action
+- configured NFC tags
+- configured smart locks or trusted lock/unlock events
+
+NFC tags and smart lock events must be explicitly configured, logged, and treated as trusted deactivation methods only for the selected household/security context.
 
 ### Acoustic Alarm Limits
 
@@ -289,6 +316,8 @@ Configuration options:
 
 - selected alarm output entities
 - enable/disable automatic activation on Security Level Red
+- warning/alarm tone selection
+- warning/alarm volume per output target
 - maximum on time
 - whether outputs turn off during pause windows
 - hard off after 10 minutes
@@ -464,6 +493,15 @@ Extensions can register:
 
 Python logic and Home Assistant entities should be shipped as real custom integrations for HACS conformity. Pure content packs can remain lighter if documented and versioned.
 
+The repository root `skills/` directory is reserved as an Alice Umbrella HACS repository catalog, not as a place for legacy Alice skill code. It should list Alice-related HACS repositories with the project's own umbrella symbol, "☂", and enough metadata for users to discover compatible addons:
+
+- addon name
+- HACS repository URL
+- type: extension, pack, wakeword pack, persona pack, game, or utility
+- languages
+- status
+- short description
+
 ### Sentence Aggregation
 
 Alice aggregates sentences from:
@@ -504,7 +542,9 @@ The integration should configure:
 - quiet hours
 - TTS output devices
 - Containment Mode
+- Containment warning/alarm tones and volume
 - external siren/switch entities
+- NFC tag and smart lock deactivation methods
 - roles and permissions
 - pack/extension behavior
 
@@ -519,6 +559,7 @@ Alice stores:
 - preferred voices/styles
 - ambient chatter counters per day
 - alarm/containment state
+- trusted Containment deactivation methods
 - last acoustic alarm timestamp
 - installed/enabled packs
 - temporary automation drafts
@@ -530,6 +571,7 @@ Sensitive data such as PINs must not be stored in clear text.
 Candidate Home Assistant entities:
 
 - `conversation.alice`
+- `sensor.alice_status` with at least `Idle` and `Thinking`
 - `sensor.alice_mood`
 - `sensor.alice_security_level`
 - `binary_sensor.alice_containment_mode`
@@ -586,9 +628,11 @@ Safety principles:
 - No critical action without confirmation.
 - No clear-text PIN storage.
 - Voice PIN enabled by default for Security Level Red.
+- Correct alarm PIN can deactivate a Red alarm regardless of role.
 - Kids/roles constrain Automation Builder.
 - External sirens disabled by default.
 - Acoustic alarm duration hard-limited.
+- Containment warning/alarm tones and volume are explicitly configurable.
 - Ambient chatter respects quiet hours and can be disabled.
 - Security messages remain clear even when Alice is sarcastic.
 
@@ -600,6 +644,7 @@ Test areas:
    - Alice commands
    - HA intent/service delegation
    - responses with and without LLM
+   - `sensor.alice_status` transitions between `Idle` and `Thinking`
 
 2. RedQueen Engine
    - mood transitions
@@ -613,7 +658,10 @@ Test areas:
    - contact opens while active -> Red
    - 10-second warning tone
    - voice PIN: 6-second window, 3 attempts
+   - correct PIN deactivates alarm independent of user role
+   - NFC tag and smart lock deactivation methods
    - acoustic alarm cycles and 10-minute limit
+   - warning/alarm tone and volume configuration
    - external siren on/off
    - PIN deactivation
 
