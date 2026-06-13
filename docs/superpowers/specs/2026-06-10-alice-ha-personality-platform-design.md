@@ -28,6 +28,18 @@ Alice is implemented as a native Home Assistant custom integration under `custom
 
 The current Project Alice release files are preserved separately in `Alice_Legacy_Release_1.0.0-rc5` as a read-only reference snapshot. Future implementation work must not edit files in that folder; useful behavior should be reimplemented in the Home Assistant integration instead.
 
+Existing years-old Project Alice root folders are also legacy, even if they still exist outside the snapshot for now. Treat these folders as read-only source material unless a later cleanup plan explicitly moves or removes them after the snapshot has been verified:
+
+- `core/`
+- `credentials/`
+- `jetbrainsDebuggers.run/`
+- `system/`
+- `tests/`
+- `trained/`
+- `var/`
+
+The active Home Assistant port should be built in new Home Assistant/HACS paths such as `custom_components/alice`, repository metadata such as `hacs.json`, documentation under `docs/`, and the repurposed Alice Umbrella HACS catalog under `skills/`.
+
 Core modules:
 
 1. **Alice Conversation Agent**
