@@ -1,0 +1,231 @@
+{
+	"outside": {
+		"en": [
+			"outside"
+		],
+		"fr": [
+			"dehors"
+		],
+		"de": [
+			"draussen"
+		],
+		"it": [
+			"fuori"
+		],
+		"pl": [
+			"na zewnątrz",
+			"na dworze"
+		]
+	},
+	"intentSeparator": {
+		"en": [
+			" and also "
+		],
+		"fr": [
+			" et aussi "
+		],
+		"de": [
+			" und auch "
+		],
+		"it": [
+			" ed anche "
+		],
+		"pl": [
+			" a także "
+		]
+	},
+	"inThe": {
+		"en": [
+			"in the room ",
+			"in the ",
+			"in room ",
+			"in "
+		],
+		"fr": [
+			"dans la pièce ",
+			"dans la ",
+			"dans le ",
+			"au "
+		],
+		"de": [
+			"in dem Raum ",
+			"in dem ",
+			"in Raum ",
+			"in "
+		],
+		"it": [
+			"nella ",
+			"nello ",
+			"nel ",
+			"nei ",
+			"dentro ",
+			"in "
+		],
+		"pl": [
+			"w pokoju ",
+			"w ",
+			"w pomieszczeniu "
+		]
+	},
+	"everywhere": {
+		"en": [
+			"everywhere"
+		],
+		"fr": [
+			"partout"
+		],
+		"de": [
+			"überall"
+		],
+		"it": [
+			"dappertutto",
+			"ovunque"
+		],
+		"pl": [
+			"wszędzie"
+		]
+	},
+	"+": {
+		"en": [
+			"plus"
+		],
+		"fr": [
+			"plus"
+		],
+		"de": [
+			"plus"
+		],
+		"it": [
+			"più"
+		],
+		"pl": [
+			"plus"
+		]
+	},
+	"-": {
+		"en": [
+			"minus"
+		],
+		"fr": [
+			"moins"
+		],
+		"de": [
+			"minus"
+		],
+		"it": [
+			"meno"
+		],
+		"pl": [
+			"minus"
+		]
+	},
+	"*": {
+		"en": [
+			"times"
+		],
+		"fr": [
+			"fois"
+		],
+		"de": [
+			"mal"
+		],
+		"it": [
+			"per"
+		],
+		"pl": [
+			"razy"
+		]
+	},
+	"/": {
+		"en": [
+			"divided by"
+		],
+		"fr": [
+			"divisé par"
+		],
+		"de": [
+			"geteilt durch"
+		],
+		"it": [
+			"diviso"
+		],
+		"pl": [
+			"dzielone przez"
+		]
+	},
+	"%": {
+		"en": [
+			"modulo"
+		],
+		"fr": [
+			"modulo"
+		],
+		"de": [
+			"modulo"
+		],
+		"it": [
+			"modulo"
+		]
+	},
+	"cancelIntent": {
+		"en": [
+			"cancel",
+			"stop",
+			"shut up",
+			"silence"
+		],
+		"fr": [
+			"annule",
+			"annuler",
+			"stop",
+			"tais-toi",
+			"ta gueule"
+		],
+		"de": [
+			"abbrechen",
+		  	"brechen",
+			"annulieren",
+			"annuliere",
+			"ruhe",
+			"klappe zu"
+		],
+		"it": [
+			"annulla",
+			"sta 'zitto",
+			"silenzio"
+		],
+		"pl": [
+			"anuluj",
+			"stop",
+			"zamknij się",
+			"cisza",
+			"cicho bądź",
+			"bądź cicho",
+			"morda w kubeł",
+			"ucisz się"
+		]
+	},
+	"politness": {
+		"en": [
+			"please",
+			"could you",
+			"would you be so nice"
+		],
+		"fr": [
+			"s'il te plaît",
+			"pourrais-tu"
+		],
+		"de": [
+			"bitte",
+			"danke",
+			"kannst du",
+			"wärst du so nett",
+			"würdest du",
+			"könntest du"
+		],
+		"it": [
+			"per favore"
+		]
+	}
+}
+
