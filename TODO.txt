@@ -19,7 +19,6 @@
 [x] Document Containment Mode tone/volume configuration.
 [x] Document alarm deactivation by correct PIN independent of user role.
 [x] Document Containment Mode deactivation through NFC tags and smart locks.
-[x] Document years-old Project Alice root folders as legacy/read-only source material.
 
 [ ] Create implementation plan from approved design.
 [ ] Scaffold HACS-compatible Home Assistant integration under custom_components/alice.
@@ -57,9 +56,6 @@
 [ ] Update README with HACS installation and roadmap links.
 
 Guardrails:
-
-[ ] Do not edit files under Alice_Legacy_Release_1.0.0-rc5; use that folder only as a read-only reference/template.
-[ ] Do not implement new Home Assistant features in legacy root folders: core/, credentials/, jetbrainsDebuggers.run/, system/, tests/, trained/, or var/.
 [ ] Build active Home Assistant code in custom_components/alice and active project metadata/docs only.
 
 Found issues to fix later:
@@ -69,4 +65,3 @@ Found issues to fix later:
 [ ] The current repository still has no Home Assistant custom integration structure.
 [ ] No HACS metadata exists yet.
 [ ] Fill skills/README.md with Alice-compatible HACS repository links once addon repositories exist.
-[ ] Decide later whether legacy root folders should be removed from the active root after Alice_Legacy_Release_1.0.0-rc5 is accepted as the canonical reference snapshot.

@@ -1,4 +1,0 @@
-enum34
-serial
-pyalsaaudio
-jwt

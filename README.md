@@ -10,9 +10,7 @@ This Fork is based on version 1.0.0-rc5,
 the original Repository you can find [here](https://github.com/project-alice-assistant/ProjectAlice)
 
 
-Project Alice is a smart voice home assistant that is completely modular and extensible. It was first built around Snips therefore runs entirely offline and never sends or shares your voice interactions with anyone, Project Alice **guarantees** your privacy in your home or wherever you’re using Project Alice.
-
-However, as an option, since we've built Project Alice on top of Snips, Project Alice can be configured to use some online alternatives and fall backs (for example, using Amazon or Google’s Text to Speech engines), just like Snips. Since Snips (and the Project Alice team) strongly believe that decisions about your privacy should be made by you and you alone, these options are all disabled by default.
+Project Alice is a smart voice home assistant that is completely modular and extensible. Project Alice can be configured to use some online alternatives and fall backs (for example, using Amazon Alexa or Google Assistant over the Home Assistant Cloud). The Project Alice team strongly believe that decisions about your privacy should be made by you and you alone, you can set all options as you like, completely offline or partly online.
 
 ## Installing
 Please follow the documentation
