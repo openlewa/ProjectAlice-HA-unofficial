@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "봉쇄 모드를 활성화하고 있습니다."
+  yellow_warning:
+    - text: "봉쇄 모드를 완전히 충족할 수 없습니다. 모든 문과 창문이 정말 닫혀 있나요?"
+  yellow_open_list:
+    - text: "열려 있음: {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "봉쇄 모드가 비활성화되었습니다."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "알람이 활성화되었습니다. 보안 PIN을 말해 주세요."
+  success:
+    - text: "알람이 확인되었습니다. 보안 수준이 정상화되었습니다."
+  failure:
+    - text: "PIN이 올바르지 않습니다. 남은 시도 횟수: {attempts_remaining}."
+  timeout:
+    - text: "PIN이 수신되지 않았습니다. 알람은 계속 활성 상태입니다."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "보안 알람! {trigger} 이(가) 열렸습니다."

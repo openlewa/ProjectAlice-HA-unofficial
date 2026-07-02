@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice Containment Alarm",
+        "description": "監視対象のコンタクト、警報出力、信頼できる解除方法を設定します。",
+        "data": {
+          "name": "名前",
+          "contact_sensors": "ドアと窓のコンタクトセンサー",
+          "warning_media_players": "警告用メディアプレーヤー",
+          "alarm_media_players": "警報用メディアプレーヤー",
+          "external_sirens": "外部警報出力",
+          "warning_volume": "警告音量",
+          "alarm_volume": "警報音量",
+          "voice_pin_enabled": "セキュリティレベル赤で音声 PIN を有効化",
+          "nfc_tags": "信頼できる NFC タグ",
+          "smart_locks": "信頼できるスマートロック"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "この Containment Alarm インスタンスは既に設定されています。"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice Containment Alarm",
+        "description": "配置受监控的门窗触点、警报输出和可信解除方式。",
+        "data": {
+          "name": "名称",
+          "contact_sensors": "门窗触点传感器",
+          "warning_media_players": "警告媒体播放器",
+          "alarm_media_players": "警报媒体播放器",
+          "external_sirens": "外部警报输出",
+          "warning_volume": "警告音量",
+          "alarm_volume": "警报音量",
+          "voice_pin_enabled": "为红色安全级别启用语音 PIN",
+          "nfc_tags": "可信 NFC 标签",
+          "smart_locks": "可信智能锁"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "此 Containment Alarm 实例已配置。"
+    }
+  }
+}

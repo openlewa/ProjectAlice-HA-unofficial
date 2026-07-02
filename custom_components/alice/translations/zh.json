@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice",
+        "description": "配置 Alice Home Assistant 个性平台。",
+        "data": {
+          "default_language": "默认语言",
+          "default_persona": "默认人格",
+          "sarcasm_level": "讽刺程度",
+          "llm_enabled": "启用可选 LLM 增强",
+          "ambient_chatter": "启用环境闲聊"
+        }
+      }
+    }
+  }
+}

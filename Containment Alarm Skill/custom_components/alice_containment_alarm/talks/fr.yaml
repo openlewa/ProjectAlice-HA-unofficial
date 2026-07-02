@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "Le mode confinement est en cours d'activation."
+  yellow_warning:
+    - text: "Le mode confinement n'a pas pu être entièrement satisfait. Toutes les portes et fenêtres sont-elles bien fermées ?"
+  yellow_open_list:
+    - text: "Ouverts : {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "Le mode confinement a été désactivé."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "Alarme active. Veuillez indiquer le code PIN de sécurité."
+  success:
+    - text: "Alarme confirmée. Niveau de sécurité normalisé."
+  failure:
+    - text: "Code PIN invalide. Tentatives restantes : {attempts_remaining}."
+  timeout:
+    - text: "Aucun code PIN reçu. L'alarme reste active."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "Alarme de sécurité ! {trigger} a été ouvert."

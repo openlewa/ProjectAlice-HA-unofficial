@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice Containment Alarm",
+        "description": "Configurez les contacts surveillés, les sorties d'alarme et les méthodes de désactivation de confiance.",
+        "data": {
+          "name": "Nom",
+          "contact_sensors": "Capteurs de contact portes et fenêtres",
+          "warning_media_players": "Lecteurs multimédias d'avertissement",
+          "alarm_media_players": "Lecteurs multimédias d'alarme",
+          "external_sirens": "Sorties d'alarme externes",
+          "warning_volume": "Volume d'avertissement",
+          "alarm_volume": "Volume d'alarme",
+          "voice_pin_enabled": "Activer le PIN vocal pour le niveau de sécurité rouge",
+          "nfc_tags": "Tags NFC de confiance",
+          "smart_locks": "Serrures connectées de confiance"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Cette instance Containment Alarm est déjà configurée."
+    }
+  }
+}

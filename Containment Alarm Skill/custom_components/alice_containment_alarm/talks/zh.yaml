@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "正在启用封锁模式。"
+  yellow_warning:
+    - text: "封锁模式无法完全满足。所有门窗真的都关好了吗？"
+  yellow_open_list:
+    - text: "未关闭：{open_contacts}。"
+
+AliceDisableContainment:
+  default:
+    - text: "封锁模式已关闭。"
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "警报已激活。请说出安全 PIN。"
+  success:
+    - text: "警报已确认。安全级别已恢复正常。"
+  failure:
+    - text: "PIN 无效。剩余尝试次数：{attempts_remaining}。"
+  timeout:
+    - text: "未收到 PIN。警报仍然激活。"
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "安全警报！{trigger} 已被打开。"

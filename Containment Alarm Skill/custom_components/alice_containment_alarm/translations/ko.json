@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice Containment Alarm",
+        "description": "모니터링 접점, 경보 출력 및 신뢰할 수 있는 해제 방법을 구성합니다.",
+        "data": {
+          "name": "이름",
+          "contact_sensors": "문과 창문 접점 센서",
+          "warning_media_players": "경고 미디어 플레이어",
+          "alarm_media_players": "경보 미디어 플레이어",
+          "external_sirens": "외부 경보 출력",
+          "warning_volume": "경고 음량",
+          "alarm_volume": "경보 음량",
+          "voice_pin_enabled": "보안 수준 빨강에서 음성 PIN 활성화",
+          "nfc_tags": "신뢰할 수 있는 NFC 태그",
+          "smart_locks": "신뢰할 수 있는 스마트 잠금장치"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "이 Containment Alarm 인스턴스는 이미 구성되어 있습니다."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+language: it
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "attiva modalità contenimento"
+          - "attiva modalità containment"
+          - "modalità contenimento attiva"
+          - "alice attiva modalità contenimento"
+          - "hey alice attiva modalità contenimento"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "disattiva modalità contenimento"
+          - "modalità contenimento disattivata"
+          - "termina modalità contenimento"
+          - "alice disattiva modalità contenimento"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "conferma allarme"
+          - "disattiva allarme"
+          - "conferma allarme con pin {pin}"
+          - "il mio pin è {pin}"

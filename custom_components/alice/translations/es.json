@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice",
+        "description": "Configura la plataforma de personalidad Alice para Home Assistant.",
+        "data": {
+          "default_language": "Idioma predeterminado",
+          "default_persona": "Persona predeterminada",
+          "sarcasm_level": "Nivel de sarcasmo",
+          "llm_enabled": "Activar mejora LLM opcional",
+          "ambient_chatter": "Activar comentarios ambientales"
+        }
+      }
+    }
+  }
+}

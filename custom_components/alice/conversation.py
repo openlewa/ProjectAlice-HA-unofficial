@@ -7,11 +7,19 @@ from typing import Literal
 
 from homeassistant.components import conversation
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import MATCH_ALL
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import intent
 
-from .const import STATUS_IDLE, STATUS_THINKING
+from .const import SUPPORTED_LANGUAGES
+from .conversation_phrases import (
+    DISABLE_CONTAINMENT,
+    ENABLE_CONTAINMENT,
+    MOOD_QUERIES,
+    extract_pin,
+    matches_phrase,
+    message,
+    normalize_language,
+)
 from .intent_handlers import (
     handle_acknowledge_alarm,
     handle_disable_containment,
@@ -40,90 +48,58 @@ class AliceConversationEntity(conversation.ConversationEntity):
 
     @property
     def supported_languages(self) -> list[str] | Literal["*"]:
-        return ["de", "en"]
+        return SUPPORTED_LANGUAGES
 
     async def async_process(
         self, user_input: conversation.ConversationInput
     ) -> conversation.ConversationResult:
         """Handle Alice-specific commands and delegate the rest to Home Assistant."""
-        language = user_input.language or self._entry.data.get("default_language", "de")
+        language = normalize_language(
+            user_input.language or self._entry.data.get("default_language", "de")
+        )
         text = (user_input.text or "").strip().lower()
         response = intent.IntentResponse(language=language)
 
-        if text in {"wie ist deine laune", "what is your mood"}:
+        if text in MOOD_QUERIES.get(language, set()):
             response.async_set_speech(
-                f"Meine Laune ist {self._redqueen.mood}."
-                if language == "de"
-                else f"My mood is {self._redqueen.mood}."
+                message("mood", language, mood=self._redqueen.mood)
             )
             return conversation.ConversationResult(
                 response=response, conversation_id=user_input.conversation_id
             )
 
-        if text in {
-            "aktiviere sperrmodus",
-            "aktiviere containment modus",
-            "sperrmodus an",
-            "enable containment mode",
-            "activate containment mode",
-            "turn on containment mode",
-        }:
+        if matches_phrase(text, ENABLE_CONTAINMENT):
             if "alice_containment_alarm" in self.hass.config.components:
-                message = await handle_enable_containment(self.hass)
-                response.async_set_speech(message)
+                speech = await handle_enable_containment(self.hass)
+                response.async_set_speech(speech)
             else:
-                response.async_set_speech(
-                    "Containment Alarm ist nicht installiert."
-                    if language == "de"
-                    else "Containment Alarm is not installed."
-                )
+                response.async_set_speech(message("containment_missing", language))
             return conversation.ConversationResult(
                 response=response, conversation_id=user_input.conversation_id
             )
 
-        if text in {
-            "deaktiviere sperrmodus",
-            "sperrmodus aus",
-            "beende sperrmodus",
-            "disable containment mode",
-            "turn off containment mode",
-            "deactivate containment mode",
-        }:
+        if matches_phrase(text, DISABLE_CONTAINMENT):
             if "alice_containment_alarm" in self.hass.config.components:
-                message = await handle_disable_containment(self.hass)
-                response.async_set_speech(message)
+                speech = await handle_disable_containment(self.hass)
+                response.async_set_speech(speech)
             else:
-                response.async_set_speech(
-                    "Containment Alarm ist nicht installiert."
-                    if language == "de"
-                    else "Containment Alarm is not installed."
-                )
+                response.async_set_speech(message("containment_missing", language))
             return conversation.ConversationResult(
                 response=response, conversation_id=user_input.conversation_id
             )
 
-        if text.startswith("bestätige alarm mit pin ") or text.startswith(
-            "confirm alarm with pin "
-        ):
-            pin = text.rsplit(" ", 1)[-1]
+        pin = extract_pin(user_input.text or "", language)
+        if pin is not None:
             if "alice_containment_alarm" in self.hass.config.components:
-                message = await handle_acknowledge_alarm(self.hass, pin)
-                response.async_set_speech(message)
+                speech = await handle_acknowledge_alarm(self.hass, pin)
+                response.async_set_speech(speech)
             else:
-                response.async_set_speech(
-                    "Containment Alarm ist nicht installiert."
-                    if language == "de"
-                    else "Containment Alarm is not installed."
-                )
+                response.async_set_speech(message("containment_missing", language))
             return conversation.ConversationResult(
                 response=response, conversation_id=user_input.conversation_id
             )
 
-        response.async_set_speech(
-            "Ich habe den Befehl noch nicht gelernt, Operator."
-            if language == "de"
-            else "I have not learned that command yet, Operator."
-        )
+        response.async_set_speech(message("unknown_command", language))
         return conversation.ConversationResult(
             response=response, conversation_id=user_input.conversation_id
         )

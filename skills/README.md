@@ -17,7 +17,7 @@ Each listed addon should include:
 
 | Name | Type | Languages | Status | Description |
 | --- | --- | --- | --- | --- |
-| Alice Containment Alarm | extension | de, en | in-repo (`Containment Alarm Skill/`) | Configurable containment security routine with Green/Yellow/Red levels, voice PIN, and acoustic alarm limits. |
+| Alice Containment Alarm | extension | de, en, fr, it, es, zh, ja, ko, pt | in-repo (`Containment Alarm Skill/`) | Configurable containment security routine with Green/Yellow/Red levels, voice PIN, and acoustic alarm limits. |
 
 Repository path for local development: `Containment Alarm Skill/`
 

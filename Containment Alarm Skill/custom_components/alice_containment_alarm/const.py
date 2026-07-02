@@ -24,6 +24,8 @@ DEFAULT_ALARM_MAX_DURATION = 600
 DEFAULT_PIN_ATTEMPTS = 3
 DEFAULT_PIN_TIMEOUT = 6
 
+SUPPORTED_LANGUAGES = ["de", "en", "fr", "it", "es", "zh", "ja", "ko", "pt"]
+
 SECURITY_GREEN = "green"
 SECURITY_YELLOW = "yellow"
 SECURITY_RED = "red"

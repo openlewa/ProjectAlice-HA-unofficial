@@ -35,6 +35,13 @@ rebuild_custom_sentences:
           options:
             - de
             - en
+            - fr
+            - it
+            - es
+            - zh
+            - ja
+            - ko
+            - pt
 
 reload_packs:
   name: Reload Alice Extensions

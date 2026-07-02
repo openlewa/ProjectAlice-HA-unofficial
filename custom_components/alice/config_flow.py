@@ -20,13 +20,14 @@ from .const import (
     DEFAULT_PERSONA,
     DEFAULT_SARCASM_LEVEL,
     DOMAIN,
+    SUPPORTED_LANGUAGES,
 )
 
 STEP_USER_DATA_SCHEMA = vol.Schema(
     {
         vol.Optional(CONF_DEFAULT_LANGUAGE, default=DEFAULT_LANGUAGE): selector.SelectSelector(
             selector.SelectSelectorConfig(
-                options=["de", "en"],
+                options=SUPPORTED_LANGUAGES,
                 mode=selector.SelectSelectorMode.DROPDOWN,
             )
         ),

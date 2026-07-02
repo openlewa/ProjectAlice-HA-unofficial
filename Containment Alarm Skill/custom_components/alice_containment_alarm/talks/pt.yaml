@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "O modo contenção está a ser ativado."
+  yellow_warning:
+    - text: "O modo contenção não pôde ser totalmente satisfeito. Todas as portas e janelas estão realmente fechadas?"
+  yellow_open_list:
+    - text: "Abertos: {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "O modo contenção foi desativado."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "Alarme ativo. Indique o PIN de segurança."
+  success:
+    - text: "Alarme confirmado. Nível de segurança normalizado."
+  failure:
+    - text: "PIN inválido. Tentativas restantes: {attempts_remaining}."
+  timeout:
+    - text: "Nenhum PIN recebido. O alarme permanece ativo."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "Alarme de segurança! {trigger} foi aberto."

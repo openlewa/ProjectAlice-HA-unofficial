@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice",
+        "description": "Home Assistant 向け Alice パーソナリティプラットフォームを設定します。",
+        "data": {
+          "default_language": "デフォルト言語",
+          "default_persona": "デフォルトペルソナ",
+          "sarcasm_level": "皮肉レベル",
+          "llm_enabled": "オプションの LLM 強化を有効化",
+          "ambient_chatter": "アンビエントチャットを有効化"
+        }
+      }
+    }
+  }
+}

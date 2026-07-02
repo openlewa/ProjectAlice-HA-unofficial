@@ -14,6 +14,7 @@ It is packaged as a standalone app so it can later be moved into its own reposit
 - **Acoustic alarm limits** with pause cycles and a 10-minute hard stop
 - **Alice Extension manifest** (`alice_extension.json`) for sentence, talk, service, and entity registration
 - **German and English** custom sentences and talk templates
+- **Nine languages**: German, English, French, Italian, Spanish, Chinese, Japanese, Korean, and Portuguese
 
 ## Safety Notes
 
@@ -88,6 +89,13 @@ Voice examples:
 
 - German: `aktiviere sperrmodus`, `deaktiviere sperrmodus`, `bestätige alarm mit pin 1234`
 - English: `enable containment mode`, `disable containment mode`, `confirm alarm with pin 1234`
+- French: `active le mode confinement`, `désactive le mode confinement`
+- Italian: `attiva modalità contenimento`, `disattiva modalità contenimento`
+- Spanish: `activa modo contención`, `desactiva modo contención`
+- Chinese: `启用封锁模式`, `关闭封锁模式`
+- Japanese: `封じ込めモードを有効にして`, `封じ込めモードを無効にして`
+- Korean: `봉쇄 모드 활성화`, `봉쇄 모드 비활성화`
+- Portuguese: `ativar modo contenção`, `desativar modo contenção`
 
 ## Development
 

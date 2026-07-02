@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice",
+        "description": "Home Assistant용 Alice 개성 플랫폼을 구성합니다.",
+        "data": {
+          "default_language": "기본 언어",
+          "default_persona": "기본 페르소나",
+          "sarcasm_level": "냉소 수준",
+          "llm_enabled": "선택적 LLM 향상 활성화",
+          "ambient_chatter": "주변 대화 활성화"
+        }
+      }
+    }
+  }
+}

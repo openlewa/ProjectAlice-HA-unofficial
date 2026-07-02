@@ -10,6 +10,8 @@ DEFAULT_LANGUAGE = "de"
 DEFAULT_PERSONA = "redqueen"
 DEFAULT_SARCASM_LEVEL = 50
 
+SUPPORTED_LANGUAGES = ["de", "en", "fr", "it", "es", "zh", "ja", "ko", "pt"]
+
 STATUS_IDLE = "Idle"
 STATUS_THINKING = "Thinking"
 

@@ -1,0 +1,24 @@
+language: fr
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "active le mode confinement"
+          - "active le mode containment"
+          - "mode confinement activé"
+          - "alice active le mode confinement"
+          - "hey alice active le mode confinement"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "désactive le mode confinement"
+          - "mode confinement désactivé"
+          - "arrête le mode confinement"
+          - "alice désactive le mode confinement"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "confirmer l'alarme"
+          - "désactiver l'alarme"
+          - "confirmer l'alarme avec le code pin {pin}"
+          - "mon code pin est {pin}"

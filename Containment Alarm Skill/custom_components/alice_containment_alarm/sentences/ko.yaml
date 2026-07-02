@@ -1,0 +1,24 @@
+language: ko
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "봉쇄 모드 활성화"
+          - "containment 모드 활성화"
+          - "봉쇄 모드 켜"
+          - "alice 봉쇄 모드 활성화"
+          - "hey alice 봉쇄 모드 활성화"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "봉쇄 모드 비활성화"
+          - "containment 모드 끄기"
+          - "봉쇄 모드 종료"
+          - "alice 봉쇄 모드 비활성화"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "알람 확인"
+          - "알람 해제"
+          - "pin {pin} 으로 알람 확인"
+          - "내 pin 은 {pin}"

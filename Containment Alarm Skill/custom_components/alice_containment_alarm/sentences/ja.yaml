@@ -1,0 +1,24 @@
+language: ja
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "封じ込めモードを有効にして"
+          - "containment モードを有効にして"
+          - "封じ込めモードをオンにして"
+          - "alice 封じ込めモードを有効にして"
+          - "hey alice 封じ込めモードを有効にして"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "封じ込めモードを無効にして"
+          - "containment モードをオフにして"
+          - "封じ込めモードを終了して"
+          - "alice 封じ込めモードを無効にして"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "アラームを確認"
+          - "アラームを解除"
+          - "pin {pin} でアラームを確認"
+          - "私の pin は {pin}"
