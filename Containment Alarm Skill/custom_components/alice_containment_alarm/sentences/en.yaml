@@ -1,0 +1,24 @@
+language: en
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "enable containment mode"
+          - "activate containment mode"
+          - "turn on containment mode"
+          - "alice enable containment mode"
+          - "hey alice enable containment mode"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "disable containment mode"
+          - "turn off containment mode"
+          - "deactivate containment mode"
+          - "alice disable containment mode"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "acknowledge alarm"
+          - "disable alarm"
+          - "confirm alarm with pin {pin}"
+          - "my pin is {pin}"

@@ -20,48 +20,49 @@
 [x] Document alarm deactivation by correct PIN independent of user role.
 [x] Document Containment Mode deactivation through NFC tags and smart locks.
 
-[ ] Create implementation plan from approved design.
-[ ] Scaffold HACS-compatible Home Assistant integration under custom_components/alice.
-[ ] Add hacs.json and Home Assistant manifest.json.
-[ ] Implement Alice Conversation Agent skeleton.
-[ ] Implement RedQueen mood/persona state model.
-[ ] Implement RedQueen mood "amorous".
+[x] Create implementation plan from approved design.
+[x] Scaffold HACS-compatible Home Assistant integration under custom_components/alice.
+[x] Add hacs.json and Home Assistant manifest.json.
+[x] Implement Alice Conversation Agent skeleton.
+[x] Implement RedQueen mood/persona state model.
+[x] Implement RedQueen mood "amorous".
 [ ] Implement User Memory with roles, titles, and voice/style preferences.
 [ ] Implement Talk/Persona Engine with template fallback.
 [ ] Implement optional LLM adapter with deterministic fallback.
 [ ] Implement Ambient Chatter scheduler with quiet hours and daily limits.
-[ ] Implement Containment Mode state machine.
-[ ] Implement Security Level entities.
+[x] Extract Containment Mode into standalone Alice Extension app (`Containment Alarm Skill/`).
+[x] Implement Containment Mode state machine (initial extension version).
+[ ] Implement Security Level entities in Alice base integration.
 [ ] Implement sensor.alice_status with Idle and Thinking states.
 [ ] Implement voice PIN flow for Security Level Red: announcement, 6-second listening window, 3 attempts.
 [ ] Implement acoustic alarm cycle with 30-second pauses and 10-minute maximum.
 [ ] Implement optional external siren/switch outputs with hard shutdown.
 [ ] Implement Containment warning/alarm tone and volume selection.
-[ ] Implement alarm deactivation by correct PIN independent of role.
-[ ] Implement Containment Mode deactivation through configured NFC tags and smart locks.
+[x] Implement alarm deactivation by correct PIN independent of role (hashed PIN in extension).
+[ ] Implement Containment Mode deactivation through configured NFC tags and smart locks (listener scaffold present).
 [ ] Implement Automation Builder draft flow.
 [ ] Implement role-based Automation Builder validation.
-[ ] Implement Alice Extension Registry.
+[x] Implement Alice Extension Registry (initial discovery and sentence collection).
 [ ] Implement Alice Pack loader and manifest validation.
 [ ] Implement Speech-to-Phrase custom sentence aggregation/export.
 [ ] Define Alice wakeword model distribution process.
 [ ] Train/distribute only "Hey Alice" and "Hey Red Queen" wakeword candidates unless the design is changed.
 [ ] Add diagnostics and repair issues for common setup problems.
 [ ] Add tests for Conversation Agent behavior.
-[ ] Add tests for RedQueen mood, relationships, and Ambient Chatter.
-[ ] Add tests for Containment Mode, alarm cycle, siren outputs, and PIN attempts.
+[ ] Add tests for RedQueen mood, relationships, and Ambient Chatter (initial RedQueen unit tests added).
+[ ] Add tests for Containment Mode, alarm cycle, siren outputs, and PIN attempts (initial state machine tests added).
 [ ] Add tests for Automation Builder permissions and safety validation.
 [ ] Add tests for pack/extension registration and sentence conflicts.
 [ ] Add HACS/manifest validation checks.
 [ ] Update README with HACS installation and roadmap links.
 
 Guardrails:
-[ ] Build active Home Assistant code in custom_components/alice and active project metadata/docs only.
+[x] Build active Home Assistant code in custom_components/alice and active project metadata/docs only.
 
 Found issues to fix later:
 
-[ ] README Roadmap link is malformed: "See our [Roadmap]todo.txt()." should link to TODO.txt correctly.
-[ ] TODO.txt existed as an empty placeholder after syncing origin/master; keep it maintained as the roadmap source.
-[ ] The current repository still has no Home Assistant custom integration structure.
-[ ] No HACS metadata exists yet.
-[ ] Fill skills/README.md with Alice-compatible HACS repository links once addon repositories exist.
+[x] README Roadmap link is malformed: "See our [Roadmap]todo.txt()." should link to TODO.txt correctly.
+[x] TODO.txt existed as an empty placeholder after syncing origin/master; keep it maintained as the roadmap source.
+[x] The current repository still has no Home Assistant custom integration structure.
+[x] No HACS metadata exists yet.
+[x] Fill skills/README.md with Alice-compatible HACS repository links once addon repositories exist.

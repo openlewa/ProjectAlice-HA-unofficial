@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "Containment mode is being activated."
+  yellow_warning:
+    - text: "Containment mode could not be fully satisfied. Are all doors and windows really closed?"
+  yellow_open_list:
+    - text: "Open contacts: {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "Containment mode has been deactivated."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "Alarm active. Please provide the security PIN."
+  success:
+    - text: "Alarm acknowledged. Security level normalized."
+  failure:
+    - text: "Invalid PIN. Attempts remaining: {attempts_remaining}."
+  timeout:
+    - text: "No PIN received. The alarm remains active."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "Security alarm! {trigger} was opened."

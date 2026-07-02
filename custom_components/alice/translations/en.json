@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice",
+        "description": "Configure the Alice Home Assistant personality platform.",
+        "data": {
+          "default_language": "Default language",
+          "default_persona": "Default persona",
+          "sarcasm_level": "Sarcasm level",
+          "llm_enabled": "Enable optional LLM enhancement",
+          "ambient_chatter": "Enable ambient chatter"
+        }
+      }
+    }
+  }
+}

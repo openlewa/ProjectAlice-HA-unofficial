@@ -1,0 +1,42 @@
+set_mood:
+  name: Set Mood
+  description: Sets the current RedQueen mood.
+  fields:
+    mood:
+      name: Mood
+      description: One of the supported Alice moods.
+      required: true
+      example: friendly
+      selector:
+        select:
+          options:
+            - friendly
+            - playful
+            - bored
+            - lonely
+            - sarcastic
+            - watchful
+            - alarmed
+            - tired
+            - vain
+            - amorous
+
+rebuild_custom_sentences:
+  name: Rebuild Custom Sentences
+  description: Collects custom sentence files from installed Alice extensions.
+  fields:
+    language:
+      name: Language
+      description: Language code such as de or en.
+      required: false
+      example: de
+      selector:
+        select:
+          options:
+            - de
+            - en
+
+reload_packs:
+  name: Reload Alice Extensions
+  description: Reloads discovered Alice extensions and pack metadata.
+  fields: {}

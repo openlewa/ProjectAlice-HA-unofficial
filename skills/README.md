@@ -13,6 +13,18 @@ Each listed addon should include:
 - status
 - short description
 
+## Registered entries
+
+| Name | Type | Languages | Status | Description |
+| --- | --- | --- | --- | --- |
+| Alice Containment Alarm | extension | de, en | in-repo (`Containment Alarm Skill/`) | Configurable containment security routine with Green/Yellow/Red levels, voice PIN, and acoustic alarm limits. |
+
+Repository path for local development: `Containment Alarm Skill/`
+
+Planned separate repository: move the folder contents to a dedicated HACS repo when ready.
+
 ## Planned entries
 
-No Alice HACS addon repositories are registered yet.
+- Alice base integration (`custom_components/alice`) — in main repository root
+- Alice wakeword pack — not registered yet
+- Alice persona packs — not registered yet

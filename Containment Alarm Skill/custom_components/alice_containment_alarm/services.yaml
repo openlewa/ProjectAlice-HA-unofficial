@@ -1,0 +1,33 @@
+enable_containment_mode:
+  name: Enable Containment Mode
+  description: Activates containment mode and evaluates configured contact sensors.
+  fields: {}
+
+disable_containment_mode:
+  name: Disable Containment Mode
+  description: Deactivates containment mode and resets the alarm state.
+  fields: {}
+
+acknowledge_alarm:
+  name: Acknowledge Alarm
+  description: Deactivates the alarm when the correct PIN is provided.
+  fields:
+    pin:
+      name: PIN
+      description: Alarm PIN to acknowledge the active alarm.
+      required: true
+      example: "1234"
+      selector:
+        text:
+
+set_pin:
+  name: Set Alarm PIN
+  description: Stores a hashed alarm PIN for voice or service acknowledgement.
+  fields:
+    pin:
+      name: PIN
+      description: New alarm PIN with at least four characters.
+      required: true
+      example: "1234"
+      selector:
+        text:

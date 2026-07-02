@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "Sperrmodus wird aktiviert."
+  yellow_warning:
+    - text: "Sperrmodus konnte nicht vollständig erfüllt werden! Sind wirklich alle Fenster und Türen geschlossen?"
+  yellow_open_list:
+    - text: "Offen sind: {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "Sperrmodus wurde deaktiviert."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "Alarm aktiv. Bitte nenne den Sicherheits-PIN."
+  success:
+    - text: "Alarm bestätigt. Sicherheitsstufe normalisiert."
+  failure:
+    - text: "PIN ungültig. Versuche verbleibend: {attempts_remaining}."
+  timeout:
+    - text: "Keine PIN-Eingabe erkannt. Der Alarm bleibt aktiv."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "Sicherheitsalarm! {trigger} wurde geöffnet."

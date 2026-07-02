@@ -67,7 +67,7 @@ Hey, did you skip ahead and not read what I wrote a bit earlier? You have to! Ju
 Please file an [Issue](https://github.com/openlewa/ProjectAlice-HA-unofficial/issues).
 
 ## 🛣️ Roadmap 
-See our [Roadmap]todo.txt().
+See our [Roadmap](TODO.txt).
 
 ## 📜 License
 
