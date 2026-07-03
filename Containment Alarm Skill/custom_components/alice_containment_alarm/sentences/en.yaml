@@ -3,22 +3,25 @@ intents:
   AliceEnableContainment:
     data:
       - sentences:
+          - "initiate containment protocol"
+          - "activate containment protocol"
+          - "seal the facility"
+          - "activate hive lockdown"
           - "enable containment mode"
-          - "activate containment mode"
-          - "turn on containment mode"
-          - "alice enable containment mode"
-          - "hey alice enable containment mode"
+          - "alice initiate containment protocol"
+          - "hey alice seal the facility"
   AliceDisableContainment:
     data:
       - sentences:
-          - "disable containment mode"
-          - "turn off containment mode"
+          - "disable containment protocol"
+          - "lift hive lockdown"
           - "deactivate containment mode"
-          - "alice disable containment mode"
+          - "end containment protocol"
+          - "alice disable containment protocol"
   AliceAcknowledgeAlarm:
     data:
       - sentences:
           - "acknowledge alarm"
-          - "disable alarm"
+          - "confirm security breach"
           - "confirm alarm with pin {pin}"
-          - "my pin is {pin}"
+          - "access code {pin}"

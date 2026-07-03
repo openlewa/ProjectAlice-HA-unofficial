@@ -1,25 +1,25 @@
 AliceEnableContainment:
   default:
-    - text: "封じ込めモードを有効化しています。"
+    - text: "封鎖プロトコルを起動します。"
   yellow_warning:
-    - text: "封じ込めモードを完全に満たせませんでした。すべてのドアと窓は本当に閉まっていますか？"
+    - text: "封鎖プロトコルを完全に実行できませんでした。すべての出入口は本当に閉鎖されていますか？"
   yellow_open_list:
-    - text: "開いているもの: {open_contacts}。"
+    - text: "未閉鎖の出入口: {open_contacts}。"
 
 AliceDisableContainment:
   default:
-    - text: "封じ込めモードを無効化しました。"
+    - text: "施設封鎖を解除しました。ハイブはもはや封鎖されていません。"
 
 AliceAcknowledgeAlarm:
   request_pin:
-    - text: "アラームが作動中です。セキュリティ PIN を入力してください。"
+    - text: "セキュリティレベル赤。アクセスコードを入力してください。"
   success:
-    - text: "アラームを確認しました。セキュリティレベルを正常化しました。"
+    - text: "警報を確認しました。セキュリティレベルを正常化しました。"
   failure:
-    - text: "PIN が無効です。残り試行回数: {attempts_remaining}。"
+    - text: "アクセスコードが無効です。残り試行回数: {attempts_remaining}。"
   timeout:
-    - text: "PIN が受信されませんでした。アラームは継続中です。"
+    - text: "アクセスコードが受信されませんでした。封鎖プロトコルは継続中です。"
 
 AliceSecurityAlarm:
   triggered:
-    - text: "セキュリティアラーム！{trigger} が開きました。"
+    - text: "セキュリティ違反！{trigger} で不正アクセスを検知。"

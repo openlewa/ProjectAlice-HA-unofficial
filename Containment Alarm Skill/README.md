@@ -13,7 +13,7 @@ It is packaged as a standalone app so it can later be moved into its own reposit
 - **Trusted deactivation** through configured NFC tags and smart lock unlock events
 - **Acoustic alarm limits** with pause cycles and a 10-minute hard stop
 - **Alice Extension manifest** (`alice_extension.json`) for sentence, talk, service, and entity registration
-- **German and English** custom sentences and talk templates
+- **Resident Evil homage terminology** for containment/lockdown per language (facility protocol style, no direct copyrighted quotes)
 - **Nine languages**: German, English, French, Italian, Spanish, Chinese, Japanese, Korean, and Portuguese
 
 ## Safety Notes
@@ -85,17 +85,33 @@ When the Alice base integration is installed, Alice discovers this extension thr
 - merge `sentences/de.yaml` and `sentences/en.yaml` into custom Speech-to-Phrase exports
 - use `talks/de.yaml` and `talks/en.yaml` for RedQueen-style responses
 
+## Resident Evil Homage Terminology
+
+Containment wording follows the facility-lockdown vocabulary used in Resident Evil localizations, without copying protected dialogue:
+
+| Language | Primary term | RE-inspired context |
+| --- | --- | --- |
+| de | Sperrmodus / Sperrprotokoll | Hive abriegeln, versiegelte Anlage |
+| en | Containment protocol | Seal the facility, Hive lockdown |
+| fr | Protocole de confinement | Installation scellée |
+| it | Protocollo di contenimento / Blocco | Struttura sigillata |
+| es | Protocolo de contención | Bloqueo de la colmena |
+| zh | 封锁协议 | 封锁设施 / 封锁蜂巢 |
+| ja | 封鎖プロトコル | 施設封鎖 / ハイブ封鎖 |
+| ko | 봉쇄 프로토콜 | 시설 봉쇄 / 하이브 봉쇄 |
+| pt | Protocolo de contenção | Bloqueio da colmeia |
+
 Voice examples:
 
-- German: `aktiviere sperrmodus`, `deaktiviere sperrmodus`, `bestätige alarm mit pin 1234`
-- English: `enable containment mode`, `disable containment mode`, `confirm alarm with pin 1234`
-- French: `active le mode confinement`, `désactive le mode confinement`
-- Italian: `attiva modalità contenimento`, `disattiva modalità contenimento`
-- Spanish: `activa modo contención`, `desactiva modo contención`
-- Chinese: `启用封锁模式`, `关闭封锁模式`
-- Japanese: `封じ込めモードを有効にして`, `封じ込めモードを無効にして`
-- Korean: `봉쇄 모드 활성화`, `봉쇄 모드 비활성화`
-- Portuguese: `ativar modo contenção`, `desativar modo contenção`
+- German: `aktiviere sperrmodus`, `aktiviere abriegelungsprotokoll`, `zugangscode 1234`
+- English: `initiate containment protocol`, `seal the facility`, `access code 1234`
+- French: `active le protocole de confinement`, `scelle l'installation`
+- Italian: `attiva protocollo di contenimento`, `attiva blocco`
+- Spanish: `activa protocolo de contención`, `bloquea la colmena`
+- Chinese: `启动封锁协议`, `封锁设施`
+- Japanese: `封鎖プロトコルを起動`, `施設を封鎖`
+- Korean: `봉쇄 프로토콜 활성화`, `하이브 봉쇄`
+- Portuguese: `ativar protocolo de contenção`, `bloquear a colmeia`
 
 ## Development
 

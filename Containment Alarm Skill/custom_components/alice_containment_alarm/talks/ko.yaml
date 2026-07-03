@@ -1,25 +1,25 @@
 AliceEnableContainment:
   default:
-    - text: "봉쇄 모드를 활성화하고 있습니다."
+    - text: "봉쇄 프로토콜을 활성화합니다."
   yellow_warning:
-    - text: "봉쇄 모드를 완전히 충족할 수 없습니다. 모든 문과 창문이 정말 닫혀 있나요?"
+    - text: "봉쇄 프로토콜을 완전히 이행할 수 없습니다. 모든 출입구가 정말 봉쇄되었습니까?"
   yellow_open_list:
-    - text: "열려 있음: {open_contacts}."
+    - text: "열린 출입구: {open_contacts}."
 
 AliceDisableContainment:
   default:
-    - text: "봉쇄 모드가 비활성화되었습니다."
+    - text: "시설 봉쇄가 해제되었습니다. 하이브는 더 이상 봉쇄되지 않습니다."
 
 AliceAcknowledgeAlarm:
   request_pin:
-    - text: "알람이 활성화되었습니다. 보안 PIN을 말해 주세요."
+    - text: "보안 수준 빨강. 접근 코드를 말해 주세요."
   success:
-    - text: "알람이 확인되었습니다. 보안 수준이 정상화되었습니다."
+    - text: "경보가 확인되었습니다. 보안 수준이 정상화되었습니다."
   failure:
-    - text: "PIN이 올바르지 않습니다. 남은 시도 횟수: {attempts_remaining}."
+    - text: "접근 코드가 올바르지 않습니다. 남은 시도 횟수: {attempts_remaining}."
   timeout:
-    - text: "PIN이 수신되지 않았습니다. 알람은 계속 활성 상태입니다."
+    - text: "접근 코드가 수신되지 않았습니다. 봉쇄 프로토콜은 계속 유지됩니다."
 
 AliceSecurityAlarm:
   triggered:
-    - text: "보안 알람! {trigger} 이(가) 열렸습니다."
+    - text: "보안 위반! {trigger} 에서 무단 접근이 감지되었습니다."

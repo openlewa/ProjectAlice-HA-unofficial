@@ -1,25 +1,25 @@
 AliceEnableContainment:
   default:
-    - text: "Containment mode is being activated."
+    - text: "Containment protocol initiated."
   yellow_warning:
-    - text: "Containment mode could not be fully satisfied. Are all doors and windows really closed?"
+    - text: "Containment protocol could not be fully satisfied. Are all entry points truly sealed?"
   yellow_open_list:
-    - text: "Open contacts: {open_contacts}."
+    - text: "Open access points: {open_contacts}."
 
 AliceDisableContainment:
   default:
-    - text: "Containment mode has been deactivated."
+    - text: "Hive lockdown lifted. The facility is no longer sealed."
 
 AliceAcknowledgeAlarm:
   request_pin:
-    - text: "Alarm active. Please provide the security PIN."
+    - text: "Security Level RED. State your access code."
   success:
     - text: "Alarm acknowledged. Security level normalized."
   failure:
-    - text: "Invalid PIN. Attempts remaining: {attempts_remaining}."
+    - text: "Invalid access code. Attempts remaining: {attempts_remaining}."
   timeout:
-    - text: "No PIN received. The alarm remains active."
+    - text: "No access code received. Containment protocol remains active."
 
 AliceSecurityAlarm:
   triggered:
-    - text: "Security alarm! {trigger} was opened."
+    - text: "Security breach! Unauthorized access at {trigger}."

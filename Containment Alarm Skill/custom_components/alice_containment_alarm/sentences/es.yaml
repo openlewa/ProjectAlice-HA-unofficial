@@ -3,22 +3,23 @@ intents:
   AliceEnableContainment:
     data:
       - sentences:
+          - "activa protocolo de contención"
           - "activa modo contención"
-          - "activa modo containment"
-          - "modo contención activado"
-          - "alice activa modo contención"
-          - "hey alice activa modo contención"
+          - "bloquea la colmena"
+          - "sella la instalación"
+          - "alice activa protocolo de contención"
+          - "hey alice bloquea la colmena"
   AliceDisableContainment:
     data:
       - sentences:
-          - "desactiva modo contención"
-          - "modo contención desactivado"
+          - "desactiva protocolo de contención"
+          - "levanta el bloqueo"
           - "finaliza modo contención"
-          - "alice desactiva modo contención"
+          - "alice desactiva protocolo de contención"
   AliceAcknowledgeAlarm:
     data:
       - sentences:
           - "confirmar alarma"
-          - "desactivar alarma"
+          - "confirmar brecha de seguridad"
           - "confirmar alarma con pin {pin}"
-          - "mi pin es {pin}"
+          - "código de acceso {pin}"

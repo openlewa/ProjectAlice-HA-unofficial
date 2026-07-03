@@ -1,25 +1,25 @@
 AliceEnableContainment:
   default:
-    - text: "Le mode confinement est en cours d'activation."
+    - text: "Protocole de confinement activé."
   yellow_warning:
-    - text: "Le mode confinement n'a pas pu être entièrement satisfait. Toutes les portes et fenêtres sont-elles bien fermées ?"
+    - text: "Le protocole de confinement n'a pas pu être entièrement satisfait. Toutes les issues sont-elles réellement scellées ?"
   yellow_open_list:
-    - text: "Ouverts : {open_contacts}."
+    - text: "Accès ouverts : {open_contacts}."
 
 AliceDisableContainment:
   default:
-    - text: "Le mode confinement a été désactivé."
+    - text: "Confinement levé. L'installation n'est plus scellée."
 
 AliceAcknowledgeAlarm:
   request_pin:
-    - text: "Alarme active. Veuillez indiquer le code PIN de sécurité."
+    - text: "Niveau de sécurité ROUGE. Indiquez le code d'accès."
   success:
     - text: "Alarme confirmée. Niveau de sécurité normalisé."
   failure:
-    - text: "Code PIN invalide. Tentatives restantes : {attempts_remaining}."
+    - text: "Code d'accès invalide. Tentatives restantes : {attempts_remaining}."
   timeout:
-    - text: "Aucun code PIN reçu. L'alarme reste active."
+    - text: "Aucun code d'accès reçu. Le protocole de confinement reste actif."
 
 AliceSecurityAlarm:
   triggered:
-    - text: "Alarme de sécurité ! {trigger} a été ouvert."
+    - text: "Violation de sécurité ! Accès non autorisé à {trigger}."

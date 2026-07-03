@@ -1,25 +1,25 @@
 AliceEnableContainment:
   default:
-    - text: "O modo contenção está a ser ativado."
+    - text: "Protocolo de contenção ativado."
   yellow_warning:
-    - text: "O modo contenção não pôde ser totalmente satisfeito. Todas as portas e janelas estão realmente fechadas?"
+    - text: "O protocolo de contenção não pôde ser totalmente cumprido. Todos os acessos estão realmente selados?"
   yellow_open_list:
-    - text: "Abertos: {open_contacts}."
+    - text: "Acessos abertos: {open_contacts}."
 
 AliceDisableContainment:
   default:
-    - text: "O modo contenção foi desativado."
+    - text: "Bloqueio levantado. A colmeia já não está selada."
 
 AliceAcknowledgeAlarm:
   request_pin:
-    - text: "Alarme ativo. Indique o PIN de segurança."
+    - text: "Nível de segurança VERMELHO. Indique o código de acesso."
   success:
     - text: "Alarme confirmado. Nível de segurança normalizado."
   failure:
-    - text: "PIN inválido. Tentativas restantes: {attempts_remaining}."
+    - text: "Código de acesso inválido. Tentativas restantes: {attempts_remaining}."
   timeout:
-    - text: "Nenhum PIN recebido. O alarme permanece ativo."
+    - text: "Nenhum código de acesso recebido. O protocolo de contenção permanece ativo."
 
 AliceSecurityAlarm:
   triggered:
-    - text: "Alarme de segurança! {trigger} foi aberto."
+    - text: "Violação de segurança! Acesso não autorizado em {trigger}."

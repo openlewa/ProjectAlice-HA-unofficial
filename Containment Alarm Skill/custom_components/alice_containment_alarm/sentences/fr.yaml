@@ -3,22 +3,23 @@ intents:
   AliceEnableContainment:
     data:
       - sentences:
+          - "active le protocole de confinement"
           - "active le mode confinement"
-          - "active le mode containment"
-          - "mode confinement activé"
-          - "alice active le mode confinement"
-          - "hey alice active le mode confinement"
+          - "scelle l'installation"
+          - "confinement de la ruche"
+          - "alice active le protocole de confinement"
+          - "hey alice active le protocole de confinement"
   AliceDisableContainment:
     data:
       - sentences:
-          - "désactive le mode confinement"
-          - "mode confinement désactivé"
+          - "désactive le protocole de confinement"
+          - "lève le confinement"
           - "arrête le mode confinement"
-          - "alice désactive le mode confinement"
+          - "alice désactive le protocole de confinement"
   AliceAcknowledgeAlarm:
     data:
       - sentences:
           - "confirmer l'alarme"
-          - "désactiver l'alarme"
+          - "accuser réception de l'alarme"
           - "confirmer l'alarme avec le code pin {pin}"
-          - "mon code pin est {pin}"
+          - "code d'accès {pin}"

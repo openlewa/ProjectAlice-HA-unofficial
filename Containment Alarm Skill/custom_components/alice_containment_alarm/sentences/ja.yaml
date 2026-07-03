@@ -3,22 +3,23 @@ intents:
   AliceEnableContainment:
     data:
       - sentences:
-          - "封じ込めモードを有効にして"
-          - "containment モードを有効にして"
-          - "封じ込めモードをオンにして"
-          - "alice 封じ込めモードを有効にして"
-          - "hey alice 封じ込めモードを有効にして"
+          - "封鎖プロトコルを起動"
+          - "封鎖モードを有効にして"
+          - "施設を封鎖"
+          - "ハイブを封鎖"
+          - "alice 封鎖プロトコルを起動"
+          - "hey alice 施設を封鎖"
   AliceDisableContainment:
     data:
       - sentences:
-          - "封じ込めモードを無効にして"
-          - "containment モードをオフにして"
-          - "封じ込めモードを終了して"
-          - "alice 封じ込めモードを無効にして"
+          - "封鎖プロトコルを解除"
+          - "封鎖モードを無効にして"
+          - "施設封鎖を終了"
+          - "alice 封鎖プロトコルを解除"
   AliceAcknowledgeAlarm:
     data:
       - sentences:
           - "アラームを確認"
-          - "アラームを解除"
+          - "セキュリティ警報を確認"
           - "pin {pin} でアラームを確認"
-          - "私の pin は {pin}"
+          - "アクセスコード {pin}"

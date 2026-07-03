@@ -4,7 +4,9 @@ intents:
     data:
       - sentences:
           - "aktiviere sperrmodus"
-          - "aktiviere containment modus"
+          - "aktiviere sperrprotokoll"
+          - "aktiviere abriegelungsprotokoll"
+          - "hive abriegeln"
           - "sperrmodus an"
           - "alice aktiviere sperrmodus"
           - "hey alice aktiviere sperrmodus"
@@ -12,6 +14,8 @@ intents:
     data:
       - sentences:
           - "deaktiviere sperrmodus"
+          - "beende sperrprotokoll"
+          - "beende abriegelungsprotokoll"
           - "sperrmodus aus"
           - "beende sperrmodus"
           - "alice deaktiviere sperrmodus"
@@ -19,6 +23,6 @@ intents:
     data:
       - sentences:
           - "alarm bestätigen"
-          - "alarm deaktivieren"
+          - "sicherheitsalarm quittieren"
           - "bestätige alarm mit pin {pin}"
-          - "mein pin ist {pin}"
+          - "zugangscode {pin}"

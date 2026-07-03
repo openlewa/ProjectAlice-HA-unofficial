@@ -39,7 +39,14 @@ def test_supported_languages_include_all_requested_locales():
 
 def test_enable_containment_matches_french_phrase():
     assert phrases.matches_phrase(
-        "active le mode confinement",
+        "active le protocole de confinement",
+        phrases.ENABLE_CONTAINMENT,
+    )
+
+
+def test_enable_containment_matches_german_re_term():
+    assert phrases.matches_phrase(
+        "aktiviere abriegelungsprotokoll",
         phrases.ENABLE_CONTAINMENT,
     )
 

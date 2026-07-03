@@ -1,25 +1,25 @@
 AliceEnableContainment:
   default:
-    - text: "La modalità contenimento è in fase di attivazione."
+    - text: "Protocollo di contenimento attivato."
   yellow_warning:
-    - text: "La modalità contenimento non può essere completata. Tutte le porte e le finestre sono davvero chiuse?"
+    - text: "Il protocollo di contenimento non ha potuto essere completato. Tutti gli accessi sono davvero sigillati?"
   yellow_open_list:
-    - text: "Aperti: {open_contacts}."
+    - text: "Accessi aperti: {open_contacts}."
 
 AliceDisableContainment:
   default:
-    - text: "La modalità contenimento è stata disattivata."
+    - text: "Blocco terminato. La struttura non è più sigillata."
 
 AliceAcknowledgeAlarm:
   request_pin:
-    - text: "Allarme attivo. Fornisci il PIN di sicurezza."
+    - text: "Livello di sicurezza ROSSO. Fornisci il codice di accesso."
   success:
     - text: "Allarme confermato. Livello di sicurezza normalizzato."
   failure:
-    - text: "PIN non valido. Tentativi rimanenti: {attempts_remaining}."
+    - text: "Codice di accesso non valido. Tentativi rimanenti: {attempts_remaining}."
   timeout:
-    - text: "Nessun PIN ricevuto. L'allarme resta attivo."
+    - text: "Nessun codice di accesso ricevuto. Il protocollo di contenimento resta attivo."
 
 AliceSecurityAlarm:
   triggered:
-    - text: "Allarme di sicurezza! {trigger} è stato aperto."
+    - text: "Violazione di sicurezza! Accesso non autorizzato a {trigger}."
