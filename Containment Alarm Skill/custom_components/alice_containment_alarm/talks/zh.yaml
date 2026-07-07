@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "封锁协议已启动。"
+  yellow_warning:
+    - text: "封锁协议未能完全执行。所有出入口是否真的已经封闭？"
+  yellow_open_list:
+    - text: "未封闭通道：{open_contacts}。"
+
+AliceDisableContainment:
+  default:
+    - text: "封锁已解除。设施不再处于封闭状态。"
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "安全等级红色。请说出访问代码。"
+  success:
+    - text: "警报已确认。安全等级已恢复正常。"
+  failure:
+    - text: "访问代码无效。剩余尝试次数：{attempts_remaining}。"
+  timeout:
+    - text: "未收到访问代码。封锁协议仍然有效。"
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "安全违规！{trigger} 出现未授权访问。"

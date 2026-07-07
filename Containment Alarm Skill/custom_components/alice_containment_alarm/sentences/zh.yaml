@@ -1,0 +1,25 @@
+language: zh
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "启动封锁协议"
+          - "启用封锁模式"
+          - "封锁设施"
+          - "封锁蜂巢"
+          - "alice 启动封锁协议"
+          - "hey alice 封锁设施"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "解除封锁协议"
+          - "关闭封锁模式"
+          - "结束设施封锁"
+          - "alice 解除封锁协议"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "确认警报"
+          - "确认安全警报"
+          - "用 pin {pin} 确认警报"
+          - "访问代码 {pin}"

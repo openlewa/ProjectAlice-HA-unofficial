@@ -1,0 +1,10 @@
+{
+  "name": "Containment Alarm",
+  "domain": "alice_containment_alarm",
+  "type": "extension",
+  "version": "0.1.0",
+  "languages": ["de", "en", "fr", "it", "es", "zh", "ja", "ko", "pt"],
+  "provides": ["intents", "handlers", "sentences", "talks", "services", "entities"],
+  "alice_min_version": "0.1.0",
+  "description": "Configurable Home Assistant security routine with Green/Yellow/Red levels, voice PIN, and acoustic alarm limits."
+}

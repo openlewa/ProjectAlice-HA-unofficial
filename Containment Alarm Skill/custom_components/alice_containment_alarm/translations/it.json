@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice Containment Alarm",
+        "description": "Configura i contatti monitorati, le uscite di allarme e i metodi di disattivazione attendibili.",
+        "data": {
+          "name": "Nome",
+          "contact_sensors": "Sensori di contatto porte e finestre",
+          "warning_media_players": "Lettori multimediali di avviso",
+          "alarm_media_players": "Lettori multimediali di allarme",
+          "external_sirens": "Uscite di allarme esterne",
+          "warning_volume": "Volume di avviso",
+          "alarm_volume": "Volume di allarme",
+          "voice_pin_enabled": "Abilita PIN vocale per il livello di sicurezza rosso",
+          "nfc_tags": "Tag NFC attendibili",
+          "smart_locks": "Serrature smart attendibili"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Questa istanza Containment Alarm è già configurata."
+    }
+  }
+}

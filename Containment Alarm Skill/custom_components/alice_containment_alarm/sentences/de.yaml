@@ -1,0 +1,28 @@
+language: de
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "aktiviere sperrmodus"
+          - "aktiviere sperrprotokoll"
+          - "aktiviere abriegelungsprotokoll"
+          - "hive abriegeln"
+          - "sperrmodus an"
+          - "alice aktiviere sperrmodus"
+          - "hey alice aktiviere sperrmodus"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "deaktiviere sperrmodus"
+          - "beende sperrprotokoll"
+          - "beende abriegelungsprotokoll"
+          - "sperrmodus aus"
+          - "beende sperrmodus"
+          - "alice deaktiviere sperrmodus"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "alarm bestätigen"
+          - "sicherheitsalarm quittieren"
+          - "bestätige alarm mit pin {pin}"
+          - "zugangscode {pin}"

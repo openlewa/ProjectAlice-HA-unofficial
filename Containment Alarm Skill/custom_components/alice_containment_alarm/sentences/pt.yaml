@@ -1,0 +1,25 @@
+language: pt
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "ativar protocolo de contenção"
+          - "ativar modo contenção"
+          - "bloquear a colmeia"
+          - "selar a instalação"
+          - "alice ativar protocolo de contenção"
+          - "hey alice bloquear a colmeia"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "desativar protocolo de contenção"
+          - "levantar bloqueio"
+          - "encerrar modo contenção"
+          - "alice desativar protocolo de contenção"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "confirmar alarme"
+          - "confirmar violação de segurança"
+          - "confirmar alarme com pin {pin}"
+          - "código de acesso {pin}"

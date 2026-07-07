@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "Sperrprotokoll wird aktiviert."
+  yellow_warning:
+    - text: "Sperrmodus konnte nicht vollständig erfüllt werden! Sind wirklich alle Fenster und Türen geschlossen?"
+  yellow_open_list:
+    - text: "Offene Zugänge: {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "Abriegelungsprotokoll beendet. Die Anlage ist nicht mehr versiegelt."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "Sicherheitsstufe ROT. Nennen Sie den Zugangscode."
+  success:
+    - text: "Alarm quittiert. Sicherheitsstufe normalisiert."
+  failure:
+    - text: "Zugangscode ungültig. Verbleibende Versuche: {attempts_remaining}."
+  timeout:
+    - text: "Kein Zugangscode empfangen. Das Sperrprotokoll bleibt aktiv."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "Sicherheitsverletzung! Unbefugter Zugang an {trigger}."

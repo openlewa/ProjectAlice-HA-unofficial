@@ -1,0 +1,27 @@
+language: en
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "initiate containment protocol"
+          - "activate containment protocol"
+          - "seal the facility"
+          - "activate hive lockdown"
+          - "enable containment mode"
+          - "alice initiate containment protocol"
+          - "hey alice seal the facility"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "disable containment protocol"
+          - "lift hive lockdown"
+          - "deactivate containment mode"
+          - "end containment protocol"
+          - "alice disable containment protocol"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "acknowledge alarm"
+          - "confirm security breach"
+          - "confirm alarm with pin {pin}"
+          - "access code {pin}"

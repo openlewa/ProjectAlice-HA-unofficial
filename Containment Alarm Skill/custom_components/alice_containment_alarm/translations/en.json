@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Alice Containment Alarm",
+        "description": "Configure monitored contacts, alarm outputs, and trusted deactivation methods.",
+        "data": {
+          "name": "Name",
+          "contact_sensors": "Door and window contact sensors",
+          "warning_media_players": "Warning media players",
+          "alarm_media_players": "Alarm media players",
+          "external_sirens": "External alarm outputs",
+          "warning_volume": "Warning volume",
+          "alarm_volume": "Alarm volume",
+          "voice_pin_enabled": "Enable voice PIN for Security Level Red",
+          "nfc_tags": "Trusted NFC tags",
+          "smart_locks": "Trusted smart locks"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This containment alarm instance is already configured."
+    }
+  }
+}

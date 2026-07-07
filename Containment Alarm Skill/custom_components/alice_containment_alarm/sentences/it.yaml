@@ -1,0 +1,25 @@
+language: it
+intents:
+  AliceEnableContainment:
+    data:
+      - sentences:
+          - "attiva protocollo di contenimento"
+          - "attiva modalità contenimento"
+          - "attiva blocco"
+          - "sigilla la struttura"
+          - "alice attiva protocollo di contenimento"
+          - "hey alice attiva blocco"
+  AliceDisableContainment:
+    data:
+      - sentences:
+          - "disattiva protocollo di contenimento"
+          - "disattiva blocco"
+          - "termina modalità contenimento"
+          - "alice disattiva protocollo di contenimento"
+  AliceAcknowledgeAlarm:
+    data:
+      - sentences:
+          - "conferma allarme"
+          - "conferma violazione di sicurezza"
+          - "conferma allarme con pin {pin}"
+          - "codice di accesso {pin}"

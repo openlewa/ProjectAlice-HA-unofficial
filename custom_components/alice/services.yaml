@@ -1,0 +1,128 @@
+set_mood:
+  name: Set Mood
+  description: Sets the current RedQueen mood.
+  fields:
+    mood:
+      name: Mood
+      description: One of the supported Alice moods.
+      required: true
+      example: friendly
+      selector:
+        select:
+          options:
+            - friendly
+            - playful
+            - bored
+            - lonely
+            - sarcastic
+            - watchful
+            - alarmed
+            - tired
+            - vain
+            - amorous
+
+rebuild_custom_sentences:
+  name: Rebuild Custom Sentences
+  description: Collects custom sentence files from installed Alice extensions.
+  fields:
+    language:
+      name: Language
+      description: Language code such as de or en.
+      required: false
+      example: de
+      selector:
+        select:
+          options:
+            - de
+            - en
+            - fr
+            - it
+            - es
+            - zh
+            - ja
+            - ko
+            - pt
+
+reload_packs:
+  name: Reload Alice Extensions
+  description: Reloads discovered Alice extensions and pack metadata.
+  fields: {}
+
+set_user_role:
+  name: Set User Role
+  description: Sets the Alice role for a Home Assistant user or speaker identity.
+  fields:
+    user_id:
+      name: User ID
+      description: Optional Home Assistant user ID. Falls back to device or guest identity.
+      required: false
+      example: abc123
+      selector:
+        text:
+    device_id:
+      name: Device ID
+      description: Optional Assist device ID used when no user ID is available.
+      required: false
+      example: media_player.kitchen
+      selector:
+        text:
+    role:
+      name: Role
+      description: Alice role used for permissions and automation scope.
+      required: true
+      example: operator
+      selector:
+        select:
+          options:
+            - kids
+            - operator
+            - administrator
+            - commander
+
+set_user_title:
+  name: Set User Title
+  description: Sets the preferred Alice title for a user, such as Operator or Commander.
+  fields:
+    user_id:
+      name: User ID
+      description: Optional Home Assistant user ID. Falls back to device or guest identity.
+      required: false
+      selector:
+        text:
+    device_id:
+      name: Device ID
+      description: Optional Assist device ID used when no user ID is available.
+      required: false
+      selector:
+        text:
+    title:
+      name: Title
+      description: Preferred title or address used by Alice.
+      required: true
+      example: Operator
+      selector:
+        text:
+
+set_user_name:
+  name: Set User Name
+  description: Sets the preferred name Alice should use for a user.
+  fields:
+    user_id:
+      name: User ID
+      description: Optional Home Assistant user ID. Falls back to device or guest identity.
+      required: false
+      selector:
+        text:
+    device_id:
+      name: Device ID
+      description: Optional Assist device ID used when no user ID is available.
+      required: false
+      selector:
+        text:
+    name:
+      name: Name
+      description: Preferred spoken name for the user.
+      required: true
+      example: Alex
+      selector:
+        text:

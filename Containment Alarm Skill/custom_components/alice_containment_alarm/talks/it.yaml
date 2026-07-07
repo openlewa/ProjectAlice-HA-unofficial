@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "Protocollo di contenimento attivato."
+  yellow_warning:
+    - text: "Il protocollo di contenimento non ha potuto essere completato. Tutti gli accessi sono davvero sigillati?"
+  yellow_open_list:
+    - text: "Accessi aperti: {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "Blocco terminato. La struttura non è più sigillata."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "Livello di sicurezza ROSSO. Fornisci il codice di accesso."
+  success:
+    - text: "Allarme confermato. Livello di sicurezza normalizzato."
+  failure:
+    - text: "Codice di accesso non valido. Tentativi rimanenti: {attempts_remaining}."
+  timeout:
+    - text: "Nessun codice di accesso ricevuto. Il protocollo di contenimento resta attivo."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "Violazione di sicurezza! Accesso non autorizzato a {trigger}."

@@ -1,0 +1,7 @@
+{
+  "name": "Alice Containment Alarm",
+  "content_in_root": false,
+  "filename": "custom_components/alice_containment_alarm",
+  "render_readme": true,
+  "homeassistant": "2024.6.0"
+}

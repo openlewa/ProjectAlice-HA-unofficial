@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "Protocole de confinement activé."
+  yellow_warning:
+    - text: "Le protocole de confinement n'a pas pu être entièrement satisfait. Toutes les issues sont-elles réellement scellées ?"
+  yellow_open_list:
+    - text: "Accès ouverts : {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "Confinement levé. L'installation n'est plus scellée."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "Niveau de sécurité ROUGE. Indiquez le code d'accès."
+  success:
+    - text: "Alarme confirmée. Niveau de sécurité normalisé."
+  failure:
+    - text: "Code d'accès invalide. Tentatives restantes : {attempts_remaining}."
+  timeout:
+    - text: "Aucun code d'accès reçu. Le protocole de confinement reste actif."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "Violation de sécurité ! Accès non autorisé à {trigger}."

@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "Protocolo de contención activado."
+  yellow_warning:
+    - text: "El protocolo de contención no pudo cumplirse por completo. ¿Están realmente sellados todos los accesos?"
+  yellow_open_list:
+    - text: "Accesos abiertos: {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "Bloqueo levantado. La instalación ya no está sellada."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "Nivel de seguridad ROJO. Indica el código de acceso."
+  success:
+    - text: "Alarma confirmada. Nivel de seguridad normalizado."
+  failure:
+    - text: "Código de acceso no válido. Intentos restantes: {attempts_remaining}."
+  timeout:
+    - text: "No se recibió ningún código de acceso. El protocolo de contención sigue activo."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "¡Brecha de seguridad! Acceso no autorizado en {trigger}."

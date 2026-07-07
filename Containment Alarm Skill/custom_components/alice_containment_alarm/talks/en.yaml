@@ -1,0 +1,25 @@
+AliceEnableContainment:
+  default:
+    - text: "Containment protocol initiated."
+  yellow_warning:
+    - text: "Containment protocol could not be fully satisfied. Are all entry points truly sealed?"
+  yellow_open_list:
+    - text: "Open access points: {open_contacts}."
+
+AliceDisableContainment:
+  default:
+    - text: "Hive lockdown lifted. The facility is no longer sealed."
+
+AliceAcknowledgeAlarm:
+  request_pin:
+    - text: "Security Level RED. State your access code."
+  success:
+    - text: "Alarm acknowledged. Security level normalized."
+  failure:
+    - text: "Invalid access code. Attempts remaining: {attempts_remaining}."
+  timeout:
+    - text: "No access code received. Containment protocol remains active."
+
+AliceSecurityAlarm:
+  triggered:
+    - text: "Security breach! Unauthorized access at {trigger}."
