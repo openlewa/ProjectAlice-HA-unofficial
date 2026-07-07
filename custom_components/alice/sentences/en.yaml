@@ -1,0 +1,18 @@
+language: en
+intents:
+  AliceMoodQuery:
+    data:
+      - sentences:
+          - "what is your mood"
+          - "alice what is your mood"
+          - "hey alice what is your mood"
+          - "red queen what is your mood"
+  AliceSetPreferredName:
+    data:
+      - sentences:
+          - "call me {name}"
+          - "alice call me {name}"
+          - "hey alice call me {name}"
+        slots:
+          name:
+            type: text

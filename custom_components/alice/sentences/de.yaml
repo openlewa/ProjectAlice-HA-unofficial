@@ -1,0 +1,18 @@
+language: de
+intents:
+  AliceMoodQuery:
+    data:
+      - sentences:
+          - "wie ist deine laune"
+          - "alice wie ist deine laune"
+          - "hey alice wie ist deine laune"
+          - "red queen wie ist deine laune"
+  AliceSetPreferredName:
+    data:
+      - sentences:
+          - "nenn mich {name}"
+          - "alice nenn mich {name}"
+          - "hey alice nenn mich {name}"
+        slots:
+          name:
+            type: text

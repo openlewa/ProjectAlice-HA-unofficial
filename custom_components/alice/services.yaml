@@ -23,7 +23,7 @@ set_mood:
 
 rebuild_custom_sentences:
   name: Rebuild Custom Sentences
-  description: Collects custom sentence files from installed Alice extensions.
+  description: Aggregates base Alice and extension sentence files into /config/custom_sentences/<language>/alice.yaml for Speech-to-Phrase.
   fields:
     language:
       name: Language

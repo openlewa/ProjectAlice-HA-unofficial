@@ -44,7 +44,7 @@
 [ ] Implement role-based Automation Builder validation.
 [x] Implement Alice Extension Registry (initial discovery and sentence collection).
 [ ] Implement Alice Pack loader and manifest validation.
-[ ] Implement Speech-to-Phrase custom sentence aggregation/export.
+[x] Implement Speech-to-Phrase custom sentence aggregation/export.
 [ ] Define Alice wakeword model distribution process.
 [ ] Train/distribute only "Hey Alice" and "Hey Red Queen" wakeword candidates unless the design is changed.
 [ ] Add diagnostics and repair issues for common setup problems.
@@ -52,7 +52,7 @@
 [ ] Add tests for RedQueen mood, relationships, and Ambient Chatter (initial RedQueen unit tests added).
 [ ] Add tests for Containment Mode, alarm cycle, siren outputs, and PIN attempts (initial state machine tests added).
 [ ] Add tests for Automation Builder permissions and safety validation.
-[ ] Add tests for pack/extension registration and sentence conflicts.
+[ ] Add tests for pack/extension registration and sentence conflicts (initial sentence export unit tests added).
 [ ] Add HACS/manifest validation checks.
 [ ] Update README with HACS installation and roadmap links.
 

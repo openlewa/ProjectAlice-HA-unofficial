@@ -142,7 +142,7 @@
 - Test: `tests/test_sentence_export.py`
 
 - [ ] Validate `alice_pack.json` manifests
-- [ ] Write `/config/custom_sentences/<lang>/alice.yaml`
+- [x] Write `/config/custom_sentences/<lang>/alice.yaml`
 - [ ] Create repair issues for duplicate intents or incompatible pack versions
 
 ---
