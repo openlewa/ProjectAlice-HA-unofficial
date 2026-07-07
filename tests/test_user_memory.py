@@ -85,3 +85,9 @@ def test_runtime_status_notifies_listeners():
     runtime_state = {"status": "Idle", "listeners": [lambda: calls.append(runtime_state["status"])]}
     set_runtime_status(runtime_state, "Thinking")
     assert calls == ["Thinking"]
+
+
+def test_alice_status_includes_voice_pipeline_states():
+    assert const.STATUS_STT == "STT"
+    assert const.STATUS_TTS == "TTS"
+    assert const.ALICE_STATUSES == ["Idle", "STT", "Thinking", "TTS"]

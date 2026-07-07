@@ -7,7 +7,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import STATUS_IDLE
+from .const import ALICE_STATUSES, STATUS_IDLE
 from .runtime import add_runtime_listener
 
 
@@ -53,6 +53,10 @@ class AliceStatusSensor(AliceBaseSensor):
     @property
     def native_value(self) -> str:
         return self._runtime.get("status", STATUS_IDLE)
+
+    @property
+    def extra_state_attributes(self) -> dict:
+        return {"available_statuses": ALICE_STATUSES}
 
 
 class AliceMoodSensor(AliceBaseSensor):

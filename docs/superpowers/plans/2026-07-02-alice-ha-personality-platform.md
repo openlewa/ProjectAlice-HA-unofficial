@@ -109,7 +109,7 @@
 
 - [ ] Expose `sensor.alice_security_level`
 - [ ] Expose `binary_sensor.alice_containment_mode` when extension is installed
-- [ ] Keep `sensor.alice_status` transitions between `Idle` and `Thinking`
+- [x] Keep `sensor.alice_status` transitions between `Idle`, `STT`, `Thinking`, and `TTS`
 
 ---
 

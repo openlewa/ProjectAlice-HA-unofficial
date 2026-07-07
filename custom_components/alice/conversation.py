@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import logging
 from typing import Literal
 
@@ -10,7 +11,12 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import intent
 
-from .const import STATUS_THINKING, SUPPORTED_LANGUAGES
+from .const import (
+    STATUS_STT,
+    STATUS_THINKING,
+    STATUS_TTS,
+    SUPPORTED_LANGUAGES,
+)
 from .conversation_phrases import (
     DISABLE_CONTAINMENT,
     ENABLE_CONTAINMENT,
@@ -30,6 +36,7 @@ from .runtime import reset_runtime_status, set_runtime_status
 from .user_memory import UserMemory
 
 _LOGGER = logging.getLogger(__name__)
+_TTS_IDLE_DELAY_SECONDS = 2.0
 
 
 class AliceConversationEntity(conversation.ConversationEntity):
@@ -67,10 +74,35 @@ class AliceConversationEntity(conversation.ConversationEntity):
             getattr(user_input, "device_id", None),
         )
 
+    def _schedule_idle_after_tts(self) -> None:
+        async def _runner() -> None:
+            await asyncio.sleep(_TTS_IDLE_DELAY_SECONDS)
+            if self._runtime.get("status") == STATUS_TTS:
+                reset_runtime_status(self._runtime)
+
+        self.hass.async_create_task(_runner())
+
+    def _finish(
+        self,
+        response: intent.IntentResponse,
+        conversation_id: str | None,
+    ) -> conversation.ConversationResult:
+        result = conversation.ConversationResult(
+            response=response,
+            conversation_id=conversation_id,
+        )
+        if response.speech:
+            set_runtime_status(self._runtime, STATUS_TTS)
+            self._schedule_idle_after_tts()
+        else:
+            reset_runtime_status(self._runtime)
+        return result
+
     async def async_process(
         self, user_input: conversation.ConversationInput
     ) -> conversation.ConversationResult:
         """Handle Alice-specific commands and delegate the rest to Home Assistant."""
+        set_runtime_status(self._runtime, STATUS_STT)
         set_runtime_status(self._runtime, STATUS_THINKING)
         try:
             language = normalize_language(
@@ -84,9 +116,7 @@ class AliceConversationEntity(conversation.ConversationEntity):
                 response.async_set_speech(
                     message("mood", language, mood=self._redqueen.mood)
                 )
-                return conversation.ConversationResult(
-                    response=response, conversation_id=user_input.conversation_id
-                )
+                return self._finish(response, user_input.conversation_id)
 
             preferred_name = extract_preferred_name(user_input.text or "", language)
             if preferred_name and self._user_memory.set_preferred_name(
@@ -98,9 +128,7 @@ class AliceConversationEntity(conversation.ConversationEntity):
                 response.async_set_speech(
                     message("name_saved", language, name=preferred_name)
                 )
-                return conversation.ConversationResult(
-                    response=response, conversation_id=user_input.conversation_id
-                )
+                return self._finish(response, user_input.conversation_id)
 
             if matches_phrase(text, ENABLE_CONTAINMENT):
                 if "alice_containment_alarm" in self.hass.config.components:
@@ -108,9 +136,7 @@ class AliceConversationEntity(conversation.ConversationEntity):
                     response.async_set_speech(speech)
                 else:
                     response.async_set_speech(message("containment_missing", language))
-                return conversation.ConversationResult(
-                    response=response, conversation_id=user_input.conversation_id
-                )
+                return self._finish(response, user_input.conversation_id)
 
             if matches_phrase(text, DISABLE_CONTAINMENT):
                 if "alice_containment_alarm" in self.hass.config.components:
@@ -118,9 +144,7 @@ class AliceConversationEntity(conversation.ConversationEntity):
                     response.async_set_speech(speech)
                 else:
                     response.async_set_speech(message("containment_missing", language))
-                return conversation.ConversationResult(
-                    response=response, conversation_id=user_input.conversation_id
-                )
+                return self._finish(response, user_input.conversation_id)
 
             pin = extract_pin(user_input.text or "", language)
             if pin is not None:
@@ -129,19 +153,16 @@ class AliceConversationEntity(conversation.ConversationEntity):
                     response.async_set_speech(speech)
                 else:
                     response.async_set_speech(message("containment_missing", language))
-                return conversation.ConversationResult(
-                    response=response, conversation_id=user_input.conversation_id
-                )
+                return self._finish(response, user_input.conversation_id)
 
             profile = self._user_memory.get_profile(user_id)
             response.async_set_speech(
                 message("unknown_command", language, name=profile.display_name())
             )
-            return conversation.ConversationResult(
-                response=response, conversation_id=user_input.conversation_id
-            )
-        finally:
+            return self._finish(response, user_input.conversation_id)
+        except Exception:
             reset_runtime_status(self._runtime)
+            raise
 
 
 async def async_setup_entry(

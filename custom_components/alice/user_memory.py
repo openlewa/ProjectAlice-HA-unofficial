@@ -47,7 +47,14 @@ class UserMemory:
         device_id: str | None = None,
         fallback_user_id: str | None = None,
     ) -> str:
-        """Resolve a stable user key from Assist context."""
+        """Resolve a stable user key from Assist context.
+
+        Priority:
+        1. Home Assistant ``user_id`` from Assist when the speaker is logged in
+        2. Explicit ``fallback_user_id`` from services or future config mapping
+        3. ``device:{device_id}`` when only the Assist device/satellite is known
+        4. ``guest`` when no identity is available
+        """
         if user_id:
             return user_id
         if fallback_user_id:

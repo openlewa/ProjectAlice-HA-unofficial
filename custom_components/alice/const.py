@@ -13,7 +13,11 @@ DEFAULT_SARCASM_LEVEL = 50
 SUPPORTED_LANGUAGES = ["de", "en", "fr", "it", "es", "zh", "ja", "ko", "pt"]
 
 STATUS_IDLE = "Idle"
+STATUS_STT = "STT"
 STATUS_THINKING = "Thinking"
+STATUS_TTS = "TTS"
+
+ALICE_STATUSES = [STATUS_IDLE, STATUS_STT, STATUS_THINKING, STATUS_TTS]
 
 MOOD_FRIENDLY = "friendly"
 MOOD_PLAYFUL = "playful"
