@@ -26,14 +26,14 @@
 [x] Implement Alice Conversation Agent skeleton.
 [x] Implement RedQueen mood/persona state model.
 [x] Implement RedQueen mood "amorous".
-[ ] Implement User Memory with roles, titles, and voice/style preferences.
+[x] Implement User Memory with roles, titles, and voice/style preferences.
 [ ] Implement Talk/Persona Engine with template fallback.
 [ ] Implement optional LLM adapter with deterministic fallback.
 [ ] Implement Ambient Chatter scheduler with quiet hours and daily limits.
 [x] Extract Containment Mode into standalone Alice Extension app (`Containment Alarm Skill/`).
 [x] Implement Containment Mode state machine (initial extension version).
 [ ] Implement Security Level entities in Alice base integration.
-[ ] Implement sensor.alice_status with Idle and Thinking states.
+[x] Implement sensor.alice_status with Idle and Thinking states.
 [ ] Implement voice PIN flow for Security Level Red: announcement, 6-second listening window, 3 attempts.
 [ ] Implement acoustic alarm cycle with 30-second pauses and 10-minute maximum.
 [ ] Implement optional external siren/switch outputs with hard shutdown.

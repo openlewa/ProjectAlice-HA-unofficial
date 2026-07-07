@@ -154,6 +154,18 @@ ACK_PREFIXES: dict[str, tuple[str, ...]] = {
     "pt": ("confirmar alarme com pin ", "código de acesso "),
 }
 
+SET_NAME_PREFIXES: dict[str, tuple[str, ...]] = {
+    "de": ("nenn mich ",),
+    "en": ("call me ",),
+    "fr": ("appelle-moi ",),
+    "it": ("chiamami ",),
+    "es": ("llámame ", "llamame "),
+    "zh": ("叫我",),
+    "ja": ("私を",),
+    "ko": ("나를 ",),
+    "pt": ("chama-me ",),
+}
+
 MESSAGES: dict[str, dict[str, str]] = {
     "mood": {
         "de": "Meine Laune ist {mood}.",
@@ -178,15 +190,26 @@ MESSAGES: dict[str, dict[str, str]] = {
         "pt": "O protocolo de contenção não está instalado.",
     },
     "unknown_command": {
-        "de": "Ich habe den Befehl noch nicht gelernt, Operator.",
-        "en": "I have not learned that command yet, Operator.",
-        "fr": "Je n'ai pas encore appris cette commande, Operator.",
-        "it": "Non ho ancora imparato questo comando, Operator.",
-        "es": "Aún no he aprendido ese comando, Operator.",
-        "zh": "我还没有学会这个命令，Operator。",
-        "ja": "そのコマンドはまだ学習していません、Operator。",
-        "ko": "아직 그 명령을 배우지 못했습니다, Operator.",
-        "pt": "Ainda não aprendi esse comando, Operator.",
+        "de": "Ich habe den Befehl noch nicht gelernt, {name}.",
+        "en": "I have not learned that command yet, {name}.",
+        "fr": "Je n'ai pas encore appris cette commande, {name}.",
+        "it": "Non ho ancora imparato questo comando, {name}.",
+        "es": "Aún no he aprendido ese comando, {name}.",
+        "zh": "我还没有学会这个命令，{name}。",
+        "ja": "そのコマンドはまだ学習していません、{name}。",
+        "ko": "아직 그 명령을 배우지 못했습니다, {name}.",
+        "pt": "Ainda não aprendi esse comando, {name}.",
+    },
+    "name_saved": {
+        "de": "Verstanden. Ich nenne dich ab jetzt {name}.",
+        "en": "Understood. I will call you {name} from now on.",
+        "fr": "Compris. Je t'appellerai {name} à partir de maintenant.",
+        "it": "Capito. Ti chiamerò {name} d'ora in poi.",
+        "es": "Entendido. Te llamaré {name} a partir de ahora.",
+        "zh": "明白。从现在起我会叫你 {name}。",
+        "ja": "了解しました。これから {name} とお呼びします。",
+        "ko": "알겠습니다. 이제부터 {name}(이)라고 부르겠습니다.",
+        "pt": "Entendido. Vou chamar-te {name} a partir de agora.",
     },
 }
 
@@ -234,5 +257,28 @@ def extract_pin(text: str, language: str) -> str | None:
         for prefix in prefixes:
             if lowered.startswith(prefix):
                 return text[len(prefix) :].strip()
+
+    return None
+
+
+def extract_preferred_name(text: str, language: str) -> str | None:
+    """Extract a preferred name from a set-name phrase."""
+    lang = normalize_language(language)
+    lowered = text.lower()
+
+    for prefix in SET_NAME_PREFIXES.get(lang, SET_NAME_PREFIXES["en"]):
+        if lowered.startswith(prefix):
+            name = text[len(prefix) :].strip()
+            return name or None
+
+    if lang == "zh" and text.startswith("叫我"):
+        name = text[len("叫我") :].strip()
+        return name or None
+
+    if lang == "ja" and text.startswith("私を"):
+        name = text[len("私を") :].strip()
+        if name.endswith("と呼んで"):
+            name = name[: -len("と呼んで")].strip()
+        return name or None
 
     return None

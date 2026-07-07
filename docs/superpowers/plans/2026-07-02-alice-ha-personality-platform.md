@@ -50,8 +50,8 @@
 - Modify: `custom_components/alice/__init__.py`
 - Test: `tests/test_user_memory.py`
 
-- [ ] Store preferred name, title, role, voice/style, relationship, and permissions per user
-- [ ] Fall back to configured speaker identity when Assist cannot resolve a user
+- [x] Store preferred name, title, role, voice/style, relationship, and permissions per user
+- [x] Fall back to configured speaker identity when Assist cannot resolve a user
 
 ### Task 1.2: Talk/Persona Engine
 

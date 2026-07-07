@@ -7,7 +7,8 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import STATUS_IDLE, STATUS_THINKING
+from .const import STATUS_IDLE
+from .runtime import add_runtime_listener
 
 
 async def async_setup_entry(
@@ -39,6 +40,7 @@ class AliceBaseSensor(SensorEntity):
             "manufacturer": "Project Alice",
             "model": "Personality Platform",
         }
+        add_runtime_listener(runtime, self.async_write_ha_state)
 
 
 class AliceStatusSensor(AliceBaseSensor):

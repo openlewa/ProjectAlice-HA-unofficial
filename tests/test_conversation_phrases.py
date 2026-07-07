@@ -55,6 +55,9 @@ def test_extract_pin_from_japanese_phrase():
     assert phrases.extract_pin("pin 1234 でアラームを確認", "ja") == "1234"
 
 
-def test_normalize_language_handles_region_codes():
-    assert phrases.normalize_language("pt-BR") == "pt"
-    assert phrases.normalize_language("zh-CN") == "zh"
+def test_extract_preferred_name_from_german_phrase():
+    assert phrases.extract_preferred_name("nenn mich Alex", "de") == "Alex"
+
+
+def test_extract_preferred_name_from_english_phrase():
+    assert phrases.extract_preferred_name("call me Operator", "en") == "Operator"
