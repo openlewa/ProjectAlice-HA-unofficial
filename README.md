@@ -24,6 +24,11 @@ Join us on our [Discord server](https://discord.gg/C6HNtzV)
 but dont ask them about this Fork, only i can give you informations about this Fork!
 
 ## Install new skills - coming soon
+
+Alice apps and extensions are listed in the [☂ Alice Umbrella catalog](skills/README.md). That catalog covers in-repo apps and planned Alice-compatible HACS repositories.
+
+Additional apps may also appear in the HACS store over time, even if they are not listed in this repository yet.
+
 Either directly on your device on the interface, or on [https://store.projectalice.io](https://store.projectalice.io)
 
 ## Who made this?
