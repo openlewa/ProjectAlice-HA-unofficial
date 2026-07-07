@@ -29,8 +29,6 @@ Alice apps and extensions are listed in the [☂ Alice Umbrella catalog](skills/
 
 Additional apps may also appear in the HACS store over time, even if they are not listed in this repository yet.
 
-Either directly on your device on the interface, or on [https://store.projectalice.io](https://store.projectalice.io)
-
 ## Who made this?
 The original code base was started at the end 2015 and several rewrites made it what it is today. It was entirely written by [*Nova*](https://github.com/Psychokiller1888) until recently, where I decided to make the code openly available to the world.
 
