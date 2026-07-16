@@ -10,6 +10,7 @@ from homeassistant.helpers.storage import Store
 from homeassistant.helpers.typing import ConfigType
 
 from .const import (
+    CONF_DEFAULT_LANGUAGE,
     CONF_SARCASM_LEVEL,
     DOMAIN,
     SERVICE_REBUILD_SENTENCES,
@@ -22,6 +23,7 @@ from .const import (
     STORAGE_KEY,
     STORAGE_USERS_KEY,
     STORAGE_VERSION,
+    SUPPORTED_LANGUAGES,
 )
 from .extension_registry import discover_alice_extensions, rebuild_custom_sentences
 from .redqueen import RedQueenState
@@ -99,14 +101,23 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             _LOGGER.info("Alice preferred name for %s updated", user_id)
 
     async def async_rebuild_sentences(call) -> None:
-        language = call.data.get("language", entry.data.get("default_language", "de"))
-        files = await rebuild_custom_sentences(hass, language)
-        _LOGGER.info("Collected %s sentence files for %s", len(files), language)
+        language = call.data.get("language")
+        languages = [language] if language else list(SUPPORTED_LANGUAGES)
+        for lang in languages:
+            result = await rebuild_custom_sentences(hass, lang)
+            _LOGGER.info(
+                "Exported %s sentence sources for %s (%s conflicts)",
+                len(result.source_files),
+                lang,
+                len(result.conflicts),
+            )
 
     async def async_reload_packs(_call) -> None:
         extensions = await discover_alice_extensions(hass)
         hass.data[DOMAIN][entry.entry_id]["extensions"] = extensions
         _LOGGER.info("Reloaded %s Alice extensions", len(extensions))
+        default_language = entry.data.get(CONF_DEFAULT_LANGUAGE, "de")
+        await rebuild_custom_sentences(hass, default_language)
 
     hass.services.async_register(DOMAIN, SERVICE_SET_MOOD, async_set_mood)
     hass.services.async_register(DOMAIN, SERVICE_SET_USER_ROLE, async_set_user_role)
@@ -116,6 +127,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.services.async_register(DOMAIN, SERVICE_RELOAD_PACKS, async_reload_packs)
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
+
+    default_language = entry.data.get(CONF_DEFAULT_LANGUAGE, "de")
+    await rebuild_custom_sentences(hass, default_language)
     return True
 
 
