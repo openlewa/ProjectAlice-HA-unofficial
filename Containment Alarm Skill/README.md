@@ -1,6 +1,6 @@
-# Alice Containment Alarm
+# Facility Protocol — Containment Alarm
 
-Alice Containment Alarm is a Home Assistant custom integration and Alice Extension that implements the configurable **Containment Mode** security routine from the [Alice Home Assistant Personality Platform design](../../docs/superpowers/specs/2026-06-10-alice-ha-personality-platform-design.md).
+Home Assistant extension for **Persona Shell HA**. Implements the configurable **Containment Mode** security routine (`facility_protocol`). See the [roadmap](../../docs/superpowers/Todo.md).
 
 It is packaged as a standalone app so it can later be moved into its own repository and installed through HACS independently of the Alice base integration.
 

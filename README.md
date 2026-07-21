@@ -25,7 +25,7 @@ but dont ask them about this Fork, only i can give you informations about this F
 
 ## Install new skills - coming soon
 
-Alice apps and extensions are listed in the [☂ Alice Umbrella catalog](skills/README.md). That catalog covers in-repo apps and planned Alice-compatible HACS repositories.
+Persona Shell extensions and persona packs are listed in the [☂ Persona Shell Umbrella](skills/README.md) catalog.
 
 Additional apps may also appear in the HACS store over time, even if they are not listed in this repository yet.
 
@@ -70,7 +70,7 @@ Hey, did you skip ahead and not read what I wrote a bit earlier? You have to! Ju
 Please file an [Issue](https://github.com/openlewa/ProjectAlice-HA-unofficial/issues).
 
 ## 🛣️ Roadmap 
-See our [Roadmap](TODO.txt).
+See our [Roadmap](docs/superpowers/Todo.md).
 
 ## 📜 License
 
