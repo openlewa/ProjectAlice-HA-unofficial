@@ -70,7 +70,7 @@ See [☂ Persona Shell Umbrella](../../skills/README.md).
 - [x] Conversation agent skeleton
 - [x] RedQueen mood/persona state model (incl. `amorous`)
 - [x] User Memory (roles, titles, voice/style, relationship)
-- [x] Extension registry (discovery + sentence collection)
+- [x] Extension registry (discovery + sentence path collection for **extensions**)
 - [x] Containment extension extracted (`Containment Alarm Skill/`)
 - [x] Containment state machine (initial)
 - [x] `sensor.alice_status` (Idle, STT, Thinking, TTS)
@@ -88,8 +88,13 @@ See [☂ Persona Shell Umbrella](../../skills/README.md).
 
 - [ ] Config flow: **persona picker** on first install
 - [ ] `persona_shell_extension.json` alias for `alice_extension.json`
-- [ ] Persona pack loader + `persona.json` validation
-- [ ] Sentence export: active persona only + extensions
+- [ ] Persona pack loader + `persona.json` validation:
+  - Discover installed persona packs (HACS / configured paths)
+  - Validate manifest: `id`, `type: persona_pack`, languages, `persona_shell_min_version`
+  - Load `sentences/<persona_id>/<lang>.yaml` and `talks/<persona_id>/<lang>.yaml` for installed packs
+  - Track enabled vs installed packs; wire `reload_packs` service
+- [ ] Sentence export: write `/config/custom_sentences/<lang>/persona_shell.yaml` — **active persona only** + enabled extension sentences
+- [ ] Sentence conflict detection + repair issues (duplicate intents, incompatible pack versions)
 - [ ] Service `set_active_persona` (default / satellite attribute / area)
 - [ ] Per-satellite persona attribute on voice satellites
 - [ ] Area-based persona config
@@ -114,10 +119,16 @@ See [☂ Persona Shell Umbrella](../../skills/README.md).
 
 ## Phase 5 — Automation builder
 
+Voice-to-automation draft flow (not implemented). Partial groundwork exists in User Memory role checks (`can_create_global_automations`).
+
 - [ ] Automation draft flow from voice
-- [ ] Entity resolver + clarification
+- [ ] **Parse common German/English automation phrases** (deterministic patterns first; optional LLM for complex phrasing)
+  - e.g. triggers (door opens, at sunset), conditions (dark, someone home), actions (turn on light)
+- [ ] Entity resolver + clarification on ambiguity
+- [ ] Draft store for multi-turn follow-up
+- [ ] Summary + confirmation before save
 - [ ] Role-based validation (Kids, Operator, Administrator, Commander)
-- [ ] Confirmation before save; `Alice -` alias prefix → `Persona Shell -`
+- [ ] Generated automation alias prefix: `Persona Shell -` (legacy: `Alice -`)
 
 ## Phase 6 — Wakewords & ecosystem
 
@@ -144,6 +155,7 @@ See [☂ Persona Shell Umbrella](../../skills/README.md).
 - [ ] Containment + persona talk routing tests
 - [ ] Security/containment mirror entity tests (available/unavailable, state sync from extension)
 - [ ] Automation builder permission tests
+- [ ] Automation phrase parser tests (DE/EN common patterns)
 - [ ] Pack/extension conflict tests
 - [ ] HACS/manifest validation
 
