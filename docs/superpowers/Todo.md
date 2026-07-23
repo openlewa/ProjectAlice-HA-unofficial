@@ -99,7 +99,7 @@ See [☂ Persona Shell Umbrella](../../skills/README.md).
 
 - [ ] Security Level entities in base integration
 - [ ] Voice PIN flow: announcement, 6s window, 3 attempts
-- [ ] Acoustic alarm cycle: 30s pauses, 10 min max
+- [ ] Acoustic alarm cycle: tone → 30s pause → repeat; **10 min max** acoustic output, then stop tones/sirens while **silent alerts stay active** (notifications, logbook, dashboard, optional TTS)
 - [ ] External siren/switch outputs (optional, hard shutdown)
 - [ ] Warning/alarm tone and volume selection
 - [ ] NFC tag + smart lock deactivation listeners
@@ -145,7 +145,7 @@ See [☂ Persona Shell Umbrella](../../skills/README.md).
 
 - Build in `custom_components/alice` (until domain migration) and active metadata/docs only
 - No copyrighted quotes, logos, or franchise “official edition” framing
-- No clear-text PIN storage; acoustic alarm hard-limited to 10 minutes
+- No clear-text PIN storage; acoustic alarm hard-limited to 10 minutes, then silent alerts only
 - Extensions and external sirens off by default where safety-critical (except: **auto-enable extension on HACS install** per product decision — containment still requires explicit entity/output config)
 
 ## Legacy mapping
