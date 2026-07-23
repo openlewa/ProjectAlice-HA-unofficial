@@ -32,7 +32,7 @@ Personas and extensions are **independent**. Extensions activate automatically w
 | Sentence paths | `sentences/<persona_id>/<lang>.yaml` |
 | STT export | **Active persona only** + enabled extension sentences |
 | Containment talks | Spoken with **active persona voice** (persona talk templates, not extension defaults) |
-| Security / containment entities | **Extension only** when installed — not duplicated on base `alice` / `persona_shell` integration |
+| Security / containment entities | **Extension** owns state; base exposes **mirror/shim** entities for stable automations |
 
 ## Architecture (short)
 
@@ -99,7 +99,12 @@ See [☂ Persona Shell Umbrella](../../skills/README.md).
 ## Phase 4 — Security & containment (extension + base)
 
 - [x] Extension entities: `sensor.*_security_level`, `binary_sensor.*_containment_mode`, open contacts (`alice_containment_alarm` domain)
-- [ ] Base integration reads extension state for persona talks / automations (no duplicate `sensor.alice_*` proxy entities)
+- [ ] **Mirror/shim** on base integration when `facility_protocol` extension is installed (extension remains source of truth):
+  - `sensor.persona_shell_security_level` ← mirrors extension security level (`green` / `yellow` / `red`)
+  - `binary_sensor.persona_shell_containment_mode` ← mirrors extension containment active state
+  - `unavailable` when extension not installed; subscribe to extension state changes (no duplicate logic)
+  - Legacy shim during migration: `sensor.alice_security_level`, `binary_sensor.alice_containment_mode`
+- [ ] Base integration reads mirrored state for persona talks / automations
 - [ ] Voice PIN flow: announcement, 6s window, 3 attempts
 - [ ] Acoustic alarm cycle: tone → 30s pause → repeat; **10 min max** acoustic output, then stop tones/sirens while **silent alerts stay active** (notifications, logbook, dashboard, optional TTS)
 - [ ] External siren/switch outputs (optional, hard shutdown)
@@ -137,6 +142,7 @@ See [☂ Persona Shell Umbrella](../../skills/README.md).
 - [ ] Persona export tests (active persona only)
 - [ ] Per-device persona resolution tests
 - [ ] Containment + persona talk routing tests
+- [ ] Security/containment mirror entity tests (available/unavailable, state sync from extension)
 - [ ] Automation builder permission tests
 - [ ] Pack/extension conflict tests
 - [ ] HACS/manifest validation
